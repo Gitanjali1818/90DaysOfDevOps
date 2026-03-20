@@ -20,5 +20,7 @@
 
 # Guidelines- 
          -current level- i am from non-IT backround.
-         -3 clear goals- 
-             
+         -3 clear goals- 1- to built a strong career.
+                         2-to gain a practical skill and hands-on experience.
+                         3- to get a good job and achieve a finicial stability.
+         -3 core DevOps skills - Linux troublshooting, CI/CD pipelines, deployment abd release management.                

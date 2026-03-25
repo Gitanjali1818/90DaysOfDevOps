@@ -15,8 +15,9 @@
       -achieve finicial stability and better career growth.
       
 # 4- How you will stay consistent every single day?
-     i have a small baby and i live in joined family so my schedule can be lil bit unpredictable . But still i am commited to taking at least 2hrs every day
-     for my learning. ill try practice hands on regularly and make notes everyday.
+     i have a small baby and i live in joined family so my schedule can be lil bit unpredictable . 
+     But still i am commited to taking at least 2hrs every day for my learning.
+     ill try practice hands on regularly and make notes everyday.
 
 # Guidelines- 
          -current level- i am from non-IT backround.

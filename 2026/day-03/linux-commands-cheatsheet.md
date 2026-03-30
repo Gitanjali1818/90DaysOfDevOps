@@ -14,3 +14,15 @@
                     5- stat- shows the detailed info about file (size, permissions,timestamps)
                     6- chmod- Modify the file permissions. (chmod 400 file)
                     7- umount- unmounts a file system.
+
+#  Networking Troubleshooting:
+                   1- host- simple DNS lookup. (IP-Domain)
+                   2- hostname -i- shows system IP address quickly.
+                   3- ping- check connectivity.
+                   4- ifconfig- shows the network interface details. (IP address,status)
+                   5- curl- test connectivity to a URL/Service.
+                   6- wget- download the files and test network.(wget URL)
+                   7- nslookup/dig- check DNS.
+
+
+                    

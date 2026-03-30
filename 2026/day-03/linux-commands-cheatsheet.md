@@ -8,21 +8,25 @@
 
 #  File system:
                     1- rmdir- Remove the empty dir.(rmdir rest)
-                    2- df -h - show the disk spaces usage in readable format.
-                    3- du -sh- shows the size of file and dir. 
-                    4- chown- changes the file owner. (chown user:file) 
-                    5- stat- shows the detailed info about file (size, permissions,timestamps)
-                    6- chmod- Modify the file permissions. (chmod 400 file)
-                    7- umount- unmounts a file system.
-
+                    2- chown- changes the file owner. (chown user:file) 
+                    3- stat- shows the detailed info about file (size, permissions,timestamps)
+                    4- chmod- Modify the file permissions. (chmod 400 file)
+                    5- umount- unmounts a file system.
+                    
+# Disk & Storage :                     
+                   1- df -h - show the disk spaces usage in readable format.
+                   2- du -sh- shows the size of file and dir. 
 #  Networking Troubleshooting:
                    1- host- simple DNS lookup. (IP-Domain)
                    2- hostname -i- shows system IP address quickly.
-                   3- ping- check connectivity.
+                   3- wget- download the files and test network.(wget URL)
                    4- ifconfig- shows the network interface details. (IP address,status)
-                   5- curl- test connectivity to a URL/Service.
-                   6- wget- download the files and test network.(wget URL)
-                   7- nslookup/dig- check DNS.
+#  Netwoking command:
+                   1- ping- check connectivity.
+                   2- curl- test connectivity to a URL/Service.
+                   3- ip a- shows the IP address info.
+                   4- nslookup/dig- check DNS.
+                   
 
 
                     

@@ -18,5 +18,12 @@
     
 4.shell: interface between the user and kernel
 
+5. 5-Cammand using daily.
+     1-man-see manual of any command
+     2-Copy
+     3-cat
+     4-whoami
+     5-pwd
+
     
     

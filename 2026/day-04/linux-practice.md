@@ -13,6 +13,8 @@
                  2- tail -n 50 /var/log/syslog- last 50 lines of the system log file.
 
 # Mini troubleshooting steps: Docker process:
-                 1- 
+                 1- check the process is running: pgrep docker- Checks whether the Docker process is running by showing its PID.
+                 2- check the status of service: systemctl status docker- showe the service is active,inactice or failed.
+                 3- Restart the service if it is not working- sudo systemctl restart docker: restart the docker
                  
                   

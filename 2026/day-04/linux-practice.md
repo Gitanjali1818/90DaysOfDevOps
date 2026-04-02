@@ -10,4 +10,9 @@
 
 # log commands:
                  1- journalctl -u docker- shows the system log related to services. 
+                 2- tail -n 50 /var/log/syslog- last 50 lines of the system log file.
+
+# Mini troubleshooting steps: Docker process:
+                 1- 
+                 
                   

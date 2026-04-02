@@ -15,6 +15,9 @@
 # Mini troubleshooting steps: Docker process:
                  1- check the process is running: pgrep docker- Checks whether the Docker process is running by showing its PID.
                  2- check the status of service: systemctl status docker- showe the service is active,inactice or failed.
-                 3- Restart the service if it is not working- sudo systemctl restart docker: restart the docker
+                 3- Restart the service if it is not working- sudo systemctl restart docker: restart the docker.
+                 4- Check service logs for errors- journactl -u docker- Desplay logs related to service to identify the errors.
+                 5- View recent system logs- sudo tail -n 50 /var/log/syslog- Shows the latest 50 log entries to help find system problems.
+                 6- Confirm the service is active again- systemctl is-active docker- verify the docker service is currently running.
                  
                   

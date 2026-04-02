@@ -1,10 +1,13 @@
 # Process commands: 
-                  1- ps aux- shows the all rumming process in details.
-                  2- pgrep docker - shows the docker process IDSs.
+                  1- ps aux- shows the all running process in details.
+                  2- pgrep docker -PID od running docker processes.
                   3- top- shows the CPU, memory, usage live.
                   4- htop- You can kill processes easily with function keys.You can scroll using arrow keys.
 
 # service commands:
-                 1- systemctl status docker: Show the status of docker.(active or not)
-                 
+                 1- systemctl status docker: Show the status of docker.(active or not).
+                 2- systemctl list-units: list all active services managed by systemd.
+
+# log commands:
+                 1- journalctl -u docker- shows the system log related to services. 
                   

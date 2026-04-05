@@ -30,8 +30,9 @@
 
 #  If this worsens: 
                      1- Restart docker Service : sudo systemctl restart docker
-                     2- log level verbose: /etc/ssh/sshd_config
-                     3- Trace SSH process: strace -p sshd_pid
+                     2- log level verbose: cd /etc/ssh/sshd_config.d/ (-rw-r--r-- 1 root root 26 Mar 13 22:08 60-cloudimg-settings.conf)
+                     3- docker ps: shows the container is working or not.
+                     4- docker run hello-world: download the test container and print- Hello from Docker!
                       
                       
                        

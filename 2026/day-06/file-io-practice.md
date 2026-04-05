@@ -30,7 +30,15 @@
                      echo "line 7: tee " >>notes.txt
                      echo "line 8: done it" >>notes.txt
 
-                  2-    
+                  2- cat notes.txt:
+                    (Line 1: linus file io
+                     Line 2: linux file co
+                     Line3: linux file fo
+                     line 4: using tee cammand
+                     line 5:using head
+                     line 6: using tail
+                     line 7: tee
+                     line 8: done it)
                                                               
 
                  

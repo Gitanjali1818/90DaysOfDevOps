@@ -21,11 +21,11 @@
                        du -sh /var/log: log directory size checked. (61M)
 
 #  Network: 
-                      ss -tulpn | grep ssh: ssh service is listning on port 22.
-                      curl -I localhost: local network connectivity works.
+                      ss -tulpn | grep docker: blank output.
+                      curl -I localhost: local network connectivity works.(HTTP/1.1 200 OK)
 
 #  Logs:  
-                      journalctl -u ssh -n 50: SSH service log checked.
+                      journalctl -u docker.service -n 50: docker service log checked.
                       tail -n 50 /var/log/auth.log: Authentication logs show successful.
 
 #  If this worsens: 

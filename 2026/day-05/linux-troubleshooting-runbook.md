@@ -8,7 +8,7 @@
 
 # Filesystem Sanity: 
                         mkdir ~/runbook-demo : created directory.
-                        cp /etc/hosts tem/runboook-demo-host-copy : File copied successfully.
+                        cp /etc/hosts tem/runboook-demo-host-copy : File copied successfully & renamed the file is host-copy.
 
 # CPU & Memory : 
                        top : Shows the CPU, memory usage live.

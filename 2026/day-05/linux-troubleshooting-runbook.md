@@ -29,7 +29,7 @@
                       tail -n 50 /var/log/auth.log: Authentication logs show successful.
 
 #  If this worsens: 
-                     1- Restart SSH Service : sudo systemctl restart ssh
+                     1- Restart docker Service : sudo systemctl restart docker
                      2- log level verbose: /etc/ssh/sshd_config
                      3- Trace SSH process: strace -p sshd_pid
                       

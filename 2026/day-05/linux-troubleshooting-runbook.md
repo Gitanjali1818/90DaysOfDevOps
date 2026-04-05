@@ -11,7 +11,9 @@
                         cp /etc/hosts tem/runboook-demo-host-copy : File copied successfully.
 
 # CPU & Memory : 
-                        
+                       top : Shows the CPU, memory usage live.
+                       htop: we can kill the process with funtion keys and scroll easily with arrow keys.
+                       
                         
                                 
                              

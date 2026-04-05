@@ -12,13 +12,13 @@
 
 # CPU & Memory : 
                        top : Shows the CPU, memory usage live.
-                       htop: we can kill the process w:ith funtion keys and scroll easily with arrow keys.
-                       ps -o pid, pcpu, pmem, comm -p 746 : SSH process using very low CPU ans memory.
+                       htop: we can kill the process with funtion keys and scroll easily with arrow keys.
+                       ps -o pid,pcpu,pmem,comm -p $(pgrep sshd) : Docker process using very low CPU ans memory.(PID 862)
                        free -h : system have sufficient free memory.
 
 #  Disk / IO : 
                        df -h : Disk usage below critical level, roots partition has available space.
-                       du -sh /var/log: log directory size checked.
+                       du -sh /var/log: log directory size checked. (61M)
 
 #  Network: 
                       ss -tulpn | grep ssh: ssh service is listning on port 22.

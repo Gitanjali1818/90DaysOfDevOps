@@ -40,4 +40,5 @@
                                                                      No.       Folder               	 What it contains
                                                                       1.      /tmp/tmpfile          A temporary file created by an application.
                                                                       2.      /tmp/cashe            A temporary folder fo cashed data.
-                                                                      
+
+                                    7. /bin :                                   

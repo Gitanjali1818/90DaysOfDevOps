@@ -41,4 +41,10 @@
                                                                       1.      /tmp/tmpfile          A temporary file created by an application.
                                                                       2.      /tmp/cashe            A temporary folder fo cashed data.
 
-                                    7. /bin :                                   
+                                    7. /bin :  bin stands for binary. It contains importand cammand program that linux need to run basic task.
+                                                   ## Example files/folders :
+                                                                     No.       Folder               	 What it contains
+                                                                      1.      /bin/cp                 copies files
+                                                                      2.      /bin/rm                 delete files
+                                                                      3.      /bin/mv                 move files
+                                                                      4.      /bin/ls                 liste the files and directories

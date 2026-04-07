@@ -50,3 +50,19 @@
                                            2.      /bin/rm                 delete files
                                            3.      /bin/mv                 move files
                                            4.      /bin/ls                 lists the files and directories
+
+       8. /use/bin : It cantains user level exicutable program installed by the system.
+                  ## Examples files/folders :
+                                           No.       Folder               	 What it contains
+                                           1.      /usr/bin/git                to manage git changes.
+                                           2.      /usr/bin/vim                text editor used to create and edit the files.
+                                           3.      /usr/bin/python             run python program and scripts.
+
+      9. /opt : Stores Optional or third party applications.
+                 ## Examples files/folders :
+                                          No.       Folder               	 What it contains
+                                           1.      /opt/docker               stores software install by google
+                                           2.      /opt/nginx                stores nginx related files and tools
+                                           3.      /opt/docker               stores docker related files and tools.
+                                           
+

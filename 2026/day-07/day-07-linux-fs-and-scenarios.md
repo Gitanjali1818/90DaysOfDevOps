@@ -1,0 +1,22 @@
+#  Part 1: Linux File System Hierarchy :
+                                    1. / (root) : The root directory is the starting point of the entire Linux filesystem.
+                                                  ## Example files/folders:
+                                                                       No.     Folder               	What it contains
+                                                                        1.      /bin	              basic system commands like ls, cp, mv
+                                                                        2.      /etc                system configuration files
+                                                                        3.      /home	              user home directories
+                                                                        4.      /var	              logs and variable system data
+
+                                     2. /home : Home directories for normal users.
+                                                 ## Example files/folders :
+                                                                        No.     Folder               	What it contains
+                                                                        1.      /home/user	          home directories of user name.
+                                                                        2.      /home/ubuntu          home directories of ubuntu name.
+                                                                        3.      /home/devops	        home directories of devops name.
+
+                                     3. /root : home directories of root user.                                 
+                                                 ## Example files/folders : 
+                                                                       No.     Folder               	What it contains
+                                                                        1.      /home/user	          home directories of user name.
+                                                                        2.      /home/ubuntu          home directories of ubuntu name.
+                                                                        3.      /home/devops	        home directories of devops name.

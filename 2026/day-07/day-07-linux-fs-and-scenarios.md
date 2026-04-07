@@ -17,7 +17,7 @@
                                      3. /root : home directories of root user.                                 
                                                  ## Example files/folders : 
                                                                        No.       Folder               	 What it contains
-                                                                        1.      /root/.bashrc          A configuration file for the bash shell.
+                                                                        1.      /root/.bashrc          A configuration file for the bash shell.c 
                                                                         2.      /root/.ssh             Folder that stores SSH keys and SSH configuration.
                                                                         3.      /root/scripts	         A folder where the root user may store automation scripts.
 
@@ -27,3 +27,5 @@
                                                                       1.      /etc/hostname         A file that store the system hostname.
                                                                       2.      /etc/passwd           this file contain a user account information.
                                                                       3.      /etc/nginx	          A directories containing configuration files for the Nginx web server.
+
+                                     5. /var/log :                                  

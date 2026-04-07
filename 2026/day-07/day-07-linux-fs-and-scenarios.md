@@ -16,7 +16,7 @@
 
                                      3. /root : home directories of root user.                                 
                                                  ## Example files/folders : 
-                                                                       No.     Folder               	What it contains
-                                                                        1.      /home/user	          home directories of user name.
-                                                                        2.      /home/ubuntu          home directories of ubuntu name.
-                                                                        3.      /home/devops	        home directories of devops name.
+                                                                       No.       Folder               	What it contains
+                                                                        1.      /root/.bashrc          A configuration file for the bash shell.
+                                                                        2.      /root/.ssh             Folder that stores SSH keys and SSH configuration.
+                                                                        3.      /root/scripts	         A folder where the root user may store automation scripts.

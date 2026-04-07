@@ -28,4 +28,16 @@
                                                                       2.      /etc/passwd           this file contain a user account information.
                                                                       3.      /etc/nginx	          A directories containing configuration files for the Nginx web server.
 
-                                     5. /var/log :                                  
+                                     5. /var/log : This directory containing system and application log file used for monitoring and dibugging.
+                                                    ## Example files/folders :
+                                                                     No.       Folder               	 What it contains
+                                                                      1.      /var/log/syslog         Gerneral system log.
+                                                                      2.      /var/log/auth_log       Authentication logs.
+                                                                      3.      /var/log/nginx	        logs related to Nginx web server.
+
+                                    6. /tmp : Stores temperory files created by application and the system.
+                                                    ## Example files/folders :
+                                                                     No.       Folder               	 What it contains
+                                                                      1.      /tmp/tmpfile          A temporary file created by an application.
+                                                                      2.      /tmp/cashe            A temporary folder fo cashed data.
+                                                                      

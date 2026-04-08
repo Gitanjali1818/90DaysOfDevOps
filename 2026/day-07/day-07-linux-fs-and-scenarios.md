@@ -64,5 +64,10 @@
                                            1.      /opt/docker               stores software install by google
                                            2.      /opt/nginx                stores nginx related files and tools
                                            3.      /opt/docker               stores docker related files and tools.
+
+
+##  Scenario 1: Service Not Starting : 
+   ##  Scenario 1 — Service Not Starting :
+            1- 
                                            
 

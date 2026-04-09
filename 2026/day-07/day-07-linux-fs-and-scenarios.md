@@ -68,6 +68,31 @@
 
 ##  Scenario 1: Service Not Starting : 
    ##  Scenario 1 — Service Not Starting :
-            1- 
-                                           
+            ## Step 1- To check whether service is runnung, stop or failed.
+                    (systemctl status myapp)
+            ## Step 2- To check the last 50 log entries for the service.
+                    (journalctl -u myapp -n 50)
+            ## Step 3- To verify if the service is configured to start automatically during the boot.
+                     (systemctl is-enabled myapp)
+            ## Step 4- To check the service is actually install on the system and managed by the systemd.
+                     (systemctl list-unit --type=service)
+
+  ## Scenario 2 - High CPU usages: The Server is slow and might have a high CPU usage.
+           ## Step 1- top - Shows real time CPU usage and running processes.
+           ## Step 2- htop - Provides interactive view of processes and CPU usage.
+           ## Step 3- ps aux --sort=-%cpu | head -10 - list the top 10 processes consuming the most CPU. 
+           ## Step 4- kill -9 <PID> - To stop the problematic processes.
+
+## Scenario 3 - Finding Service Logs: A developer asks where docker logs are.
+          ## Step 1 - systemctl status docker: show the status of docker service.
+          ## Step 2 - journalctl -u docker -n 50 docker: shows the last 50 log entries.
+          ## Step 3 - journalctl -u docker -f : shows the real time logs to monitor the service.
+
+## Scenario 4: File Permissions Issue: A script at /home/user/backup.sh is can not run.
+         ## Step 1 - ls -l /home/user/backup.sh : to check the permission of file.
+         ## Loom for - rw-r--r-- backup.sh : Notice there is no exicution on file. 
+         ## Step 2 - chmod +x /home/user/backup.sh : add execute permission.
+         ## step 3 - ls -l /home/user/backup.sh : verify that exicute permission has been added.
+         ## Step 4 - ./backup.sh : run the script.
+         
 

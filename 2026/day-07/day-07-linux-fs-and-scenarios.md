@@ -66,7 +66,7 @@
                                            3.      /opt/docker               stores docker related files and tools.
 
 
-##  Scenario 1: Service Not Starting : 
+##  Scenarios 
    ##  Scenario 1 — Service Not Starting :
             ## Step 1- To check whether service is runnung, stop or failed.
                     (systemctl status myapp)

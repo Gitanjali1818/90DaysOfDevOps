@@ -90,7 +90,7 @@
 
 ## Scenario 4: File Permissions Issue: A script at /home/user/backup.sh is can not run.
          ## Step 1 - ls -l /home/user/backup.sh : to check the permission of file.
-         ## Loom for - rw-r--r-- backup.sh : Notice there is no exicution on file. 
+         ## Look for - rw-r--r-- backup.sh : Notice there is no exicution on file. 
          ## Step 2 - chmod +x /home/user/backup.sh : add execute permission.
          ## step 3 - ls -l /home/user/backup.sh : verify that exicute permission has been added.
          ## Step 4 - ./backup.sh : run the script.

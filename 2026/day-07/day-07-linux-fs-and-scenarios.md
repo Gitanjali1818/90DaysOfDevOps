@@ -39,9 +39,9 @@
 
         6. /tmp : Stores temperory files created by application and the system.
                     ## Example files/folders :
-                                            No.       Folder               	 What it contains
-                                            1.      /tmp/tmpfile          A temporary file created by an application.
-                                            2.      /tmp/cashe            A temporary folder fo cashed data.
+                                            No.       Folder               	       What it contains
+                                            1.      /tmp/snap-private-tmp          A temporary file created by an application.
+                                            2.      /tmp/cashe                     A temporary folder fo cashed data.
 
        7. /bin :  bin stands for binary. It contains importand cammand program that linux need to run basic task.
                    ## Example files/folders :
@@ -68,12 +68,12 @@
 
 ##  Scenarios 
    ##  Scenario 1 — Service Not Starting :
-            ## Step 1- To check whether service is runnung, stop or failed.
-                    (systemctl status myapp)
+            ## Step 1- To check whether service is running, stop or failed.
+                    (systemctl status docker)
             ## Step 2- To check the last 50 log entries for the service.
-                    (journalctl -u myapp -n 50)
+                    (journalctl -u docker -n 50)
             ## Step 3- To verify if the service is configured to start automatically during the boot.
-                     (systemctl is-enabled myapp)
+                     (systemctl is-enabled docker)
             ## Step 4- To check the service is actually install on the system and managed by the systemd.
                      (systemctl list-unit --type=service)
 

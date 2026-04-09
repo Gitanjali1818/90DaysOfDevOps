@@ -73,9 +73,9 @@
             ## Step 2- To check the last 50 log entries for the service.
                     (journalctl -u docker -n 50)
             ## Step 3- To verify if the service is configured to start automatically during the boot.
-                     (systemctl is-enabled docker)
+                     (systemctl is-enabled docker.s)
             ## Step 4- To check the service is actually install on the system and managed by the systemd.
-                     (systemctl list-unit --type=service)
+                     (systemctl list-units --type=service)
 
   ## Scenario 2 - High CPU usages: The Server is slow and might have a high CPU usage.
            ## Step 1- top - Shows real time CPU usage and running processes.

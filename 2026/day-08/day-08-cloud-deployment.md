@@ -13,8 +13,9 @@
 
        ## PART 2: Connect via SSH :
              1-In terminal: chmod 400 geet-key.pem
-             2- Connect -ssh -i my-key.pem ubuntu@3.25.45.100
-       ## SCREEN SHORT NEED
+             2- Connect - ssh -i "geet-key.pem" ubuntu@ec2-44-245-217-236.us-west-2.compute.amazonaws.com
+       ## "C:\Users\Aditya Sutar\Desktop\screen shot\Screenshot 2026-04-10 124110.png"
+
 
        ##PART 3: Update server :
              1- sudo apt update

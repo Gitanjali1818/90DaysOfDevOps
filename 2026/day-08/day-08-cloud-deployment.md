@@ -47,10 +47,10 @@
              2- verify log file : cat ~/nginx-log.txt
     ## Screenshot needed :
 
-    ## PART 9 : Download log file to local machine : scp -i my-key.pem ubuntu@YOUR_SERVER_IP:~/nginx-logs.txt .
+    ## PART 9 : Download log file to local machine : scp -i my-key.pem ubuntu@18.236.106.166:~/nginx-logs.txt .
 
 ## Commands Used :
-                ssh -i geet-key.pem ubuntu@server-ip
+                ssh -i geet-key.pem ubuntu@18.236.106.166
                 sudo apt update
                 sudo apt install docker.io -y
                 sudo systemctl start docker
@@ -59,7 +59,7 @@
                 systemctl status nginx
                 cat /var/log/nginx/access.log
                 cp /var/log/nginx/access.log ~/nginx-logs.txt
-                scp -i my-key.pem ubuntu@server-ip:~/nginx-logs.txt .
+                scp -i my-key.pem ubuntu@18.236.106.166:~/nginx-logs.txt .
 
 ## Challenges Faced:
                1- i could not access the nginx page from browser.

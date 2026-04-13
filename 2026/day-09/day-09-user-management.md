@@ -17,6 +17,56 @@
 
       ## Verify :
           1- cat /etc/group | grep developers :
+
+## Task 3: Assign to Groups :
+      ## Assign users :
+          1- sudo usermod -aG developers tokyo
+          2- sudo usermod -aG developers berlin
+          3- sudo usermod -aG admins berlin
+          4- sudo usermod -aG admins professor
+
+      ## Verify group membership :
+         1- groups tokyo
+         2- groups berlin
+         3- groups professor 
+
+## Task 4: Shared Directory :
+      ## Create directory :
+        1- sudo mkdir -p /opt/dev-project
+      
+      ## Change group ownership :
+        1- sudo chgrp developers /opt/dev-project
+
+      ## Set permissions :
+        1- sudo chmod 775 /otp/dev-project
+
+      ## Test as users :
+        1- sudo -u tokyo touch /opt/dev-project/file1.txt
+        2- sudo -u berlin touch /opt/dev-project/file2.txt
+
+      ## Verify :
+        1- ls -l /opt/dev-project
+
+## Task 5: Team Workspace :
+      ## Create user :
+        1- sudo useradd -m nairobi 
+        2- sudo passwd nairobi
+
+      ## create group :
+        1- sudo groupadd project-team
+
+      ## Add users :
+        1- sudo usermod -aG project-team nairobi
+        2- sudo usermod -aG project-team tokyo
+
+      ## Create directory :
+        1- sudo mkdir -p /opt/team-workplace
+  
+        
+
+        
+         
+          
           
 
 

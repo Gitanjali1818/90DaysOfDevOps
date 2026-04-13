@@ -61,6 +61,13 @@
 
       ## Create directory :
         1- sudo mkdir -p /opt/team-workplace
+
+      ## Set group + permissions :
+        1- sudo chgrp project-team /opt/team-workplace
+        2- sudo chmod 755 /opt/team-workplace 
+
+      ## Test :
+        1- sudo -u nairobi touch /opt/team-workplace/text.txt
   
         
 

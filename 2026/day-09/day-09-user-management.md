@@ -68,6 +68,38 @@
 
       ## Test :
         1- sudo -u nairobi touch /opt/team-workplace/text.txt
+
+
+## Documentation :
+            # Day 09 Challenge
+      
+       ## Users & Groups Created
+         1-Users: tokyo, berlin, professor, nairobi
+         2- Groups: developers, admins, project-team
+         
+       ## Group Assignments
+         1- tokyo → developers
+         2- berlin → developers, admins
+         3- professor → admins
+         4- nairobi → project-team
+
+       ## Directories Created
+        1- /opt/dev-project (developers, 775)
+        2- /opt/team-workspace (project-team, 775)
+
+       ## Commands Used
+          - useradd -m
+          - passwd
+          - groupadd
+          - usermod -aG
+          - chmod
+          - chgrp
+
+      ## What I Learned
+       1- How to manage users and groups
+       2- How permissions work in shared directories
+       3- How to test access using sudo -u
+        
   
         
 

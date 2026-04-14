@@ -95,10 +95,40 @@
           - chmod
           - chgrp
 
-      ## What I Learned
+      ## Issue faced :
+         While trying to create a file:
+           1- sudo -u nairobi touch /opt/team-workplace/file3.txt :- Error:Permission denied
+      ## Investigation :
+           1- Checked directory permissions:ls -ld /opt/team-workplace
+              output : drwxrwxr-x 2 root root ...
+      ## Root Cause
+           - Directory owner = root
+           - Directory group = root ❌        
+           - User `nairobi` belongs to group `project-team`  
+      ## Conclusion :
+          Since the directory belongs to `root` group, the user `nairobi` does not have write access.
+
+     ## Solution
+         - Changed group ownership:sudo chgrp project-team /opt/team-workplace    
+
+     ## What I Learned
        1- How to manage users and groups
-       2- How permissions work in shared directories
+       2- How permissions work in shared directories.
        3- How to test access using sudo -u
+       4- Directory group ownership must match user group
+       5- Permissions alone are not enough
+       6- Always check:
+          - ls -ld <directory>
+          - groups <user>
+ 
+       
+
+
+               
+       
+
+
+      
         
   
         

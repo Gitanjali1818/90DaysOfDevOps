@@ -4,8 +4,8 @@
              sudo passwd tokyo : create password
           2- sudo useradd -m berlin : create berlin user
              sudo passwd berlin : create password
-          3- sudo useradd professor : create professo user
-             sudo passwd professor : ceate password
+          3- sudo useradd -m professor : create professor user
+             sudo passwd professor : create password
 
       ## Verify users :
           1- cat /etc/passwd | grep tokyo : 

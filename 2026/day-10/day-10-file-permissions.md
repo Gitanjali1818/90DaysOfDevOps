@@ -1,6 +1,6 @@
 ## Day 10 – File Permissions & File Operations Challenge ##
 
-## Task 1: 
+## Task 1: Create files
     ## Create Files :
       1- touch devops.txt
       2- echo "this is my devops notes file" > notes.txt

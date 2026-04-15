@@ -1,9 +1,9 @@
 ## Task 1: Check Ownership:
-   1- cd ~ 
-   2- ls -l 
-  ##Difference Between Owner and Group :
-    Owner : The user who owns the file and has primary control over it.
-    Group : A set of users who share access permissions to the file.
+       1- cd ~ 
+       2- ls -l 
+     ##Difference Between Owner and Group :
+        Owner : The user who owns the file and has primary control over it.
+        Group : A set of users who share access permissions to the file.
 
 ## Task 2: Basic chown Operations:sudo chown tokyo devops-file.txt
  ##create file & Check current owner:

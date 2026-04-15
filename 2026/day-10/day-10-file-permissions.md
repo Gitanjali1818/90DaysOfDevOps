@@ -35,11 +35,11 @@
       - mkdir project
       - chmod 755 project
       -ls -l - verify
-      - ld -ld project - verify
+      - ls -ld project - verify
 
 ## Task 5: Test Permissions:
     1- Try writing to read-only file
-      - echo "test'>> devops.txt - 
+      - echo "test">> devops.txt - 
         **Permission denied**
     2- Try executing without permission
       - chmod -X script.sh

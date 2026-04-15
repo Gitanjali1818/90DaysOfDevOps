@@ -68,6 +68,34 @@
        3- sudo chown nairobi:vault-team bank-heist/escape-plan.txt
      ##verify:
         1- ls -l bank-heist/
+
+
+##Documentation:
+      ##Files & Directories Created
+          1- devops-file.txt
+          2- team-notes.txt
+          3- project-config.yaml
+          4- app-logs/
+          5-  heist-project/
+          6- vault/gold.txt
+          7- plans/strategy.conf
+          8- bank-heist/
+          9- access-codes.txt
+          10- blueprints.pdf
+          11- escape-plan.txt
+     ##Ownership Changes
+           1- devops-file.txt: user:user → berlin:user
+           2- team-notes.txt: user:user → user:heist-team
+           3- project-config.yaml: user:user → professor:heist-team
+           4- app-logs/: user:user → berlin:heist-team
+     ##Recursive Change
+           1- heist-project/: user:user → professor:planners
+               (applied to all subdirectories and files)
+     ##Practice Challenge
+           1- access-codes.txt: user:user → tokyo:vault-team
+           2- blueprints.pdf: user:user → berlin:tech-team
+           3- escape-plan.txt: user:user → nairobi:vault-team
+
      
     
 

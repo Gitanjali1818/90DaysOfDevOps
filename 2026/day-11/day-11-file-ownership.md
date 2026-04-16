@@ -12,7 +12,7 @@
     ##change owner:
       1- sudo chown tokyo devops-file.txt
       2- ls -l devops-file.txt
-      3- sydo chown berlin devops-file.txt
+      3- sudo chown berlin devops-file.txt
       4- ls -l devops-file.txt
 
 ## Task 3: Basic chgrp Operations:
@@ -34,7 +34,7 @@
      ##create directory & change owner:
         1- mkdir app-logs
         2- sudo chown berlin:heist-team app-logs
-        3- ls -l all-logs
+        3- ls -l app-logs
 
 ## Task 5: Recursive Ownership:
      ##Create directory structure:
@@ -71,7 +71,8 @@
 
 
 ## Documentation:
-            ##Files & Directories Created
+         
+         ##Files & Directories Created
               1- devops-file.txt
               2- team-notes.txt
               3- project-config.yaml
@@ -83,20 +84,36 @@
               9- access-codes.txt
               10- blueprints.pdf
               11- escape-plan.txt
-            ##Ownership Changes
+           ##Ownership Changes
                1- devops-file.txt: user:user → berlin:user
                2- team-notes.txt: user:user → user:heist-team
                3- project-config.yaml: user:user → professor:heist-team
                4- app-logs/: user:user → berlin:heist-team
-             ##Recursive Change
+           ##Recursive Change
                 1- heist-project/: user:user → professor:planners
                     (applied to all subdirectories and files)
-             ##Practice Challenge
+           ##Practice Challenge
                 1- access-codes.txt: user:user → tokyo:vault-team
                 2- blueprints.pdf: user:user → berlin:tech-team
                 3- escape-plan.txt: user:user → nairobi:vault-team
 
-     
+## Troubleshooting: Home Directory Issue:
+           ## User was created without a home directory (useradd without -m)
+              1- cd /home/nairobi - Error:No such file or directory
+           ##Fixed :
+              1- sudo mkdir /home/nairobi
+              2- sudo chown nairobi:nairobi /home/nairobi
+           ##verification:
+              1- ls /home - tokyo  ubuntu  nairobi
+              2- cd /home/nairobi - work successfully
+
+           ##Key Learning
+              1- useradd without -m → No home directory
+              2- /etc/passwd entry ≠ directory exists
+              3- Always verify using ls /home    
+              
+
+           
     
 
     

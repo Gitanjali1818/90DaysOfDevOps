@@ -32,16 +32,16 @@
    ##ss add 
 
 ## Task 5: Format and Mount:
-    1- mkfs.ext4 /dev/devops-vg/app-data - formats the logical volume with ext4 filesystem
-    2- mkdir -p /mnt/app-data - creates the mount directory
-    3- mount /dev/devops-vg/app-data /mnt/app-data - mounts the logical volume to the directory
+    1- mkfs.ext4 /dev/devops-vg/devops-lv - formats the logical volume with ext4 filesystem
+    2- mkdir -p /mnt/devops-data - creates the mount directory
+    3- mount /dev/devops-vg/devops-lv /mnt/devops-data - mounts the logical volume to the directory
     4- df -h /mnt/app-data - show the disk usage of the mounted volume in human readble format
    ##ss add 
 
 ## Task 6: Extend the Volume:
-    1- lvextend -L +200 /dev/devops-vg/app-data - increase the logical volume of size by 200MB 
-    2- resizes2fs /dev/devops-vg/app-data - expands the file system to use the new space
-    3- df -h /mnt/app-data - verify the update disk size in human readable format
+    1- lvextend -L +200 /dev/devops-vg/devops-lv - increase the logical volume of size by 200MB 
+    2- resizes2fs /dev/devops-vg/devops-lv- expands the file system to use the new space
+    3- df -h /mnt/devops-data - verify the update disk size in human readable format
    ##ss add
 
 ## What I Learned:

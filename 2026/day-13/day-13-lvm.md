@@ -17,12 +17,12 @@
    ##ss add
    
 ## Task 2: Create Physical Volume:
-    1- pvcreate /dev/loop - initializes the device as a physical volume
+    1- pvcreate /dev/nvme1n1 /dev/nvme2n1 /dev/nvme3n1 - initializes the device as a physical volume
     2- pvs  - display info about physical volume
    ##ss add 
    
 ## Task 3: Create Volume Group:
-    1- vgcreate devops-vg dev/sdb - Creates a Volume Group named devops-vg using the Physical Volume /dev/loop0
+    1- vgcreate devops-vg /dev/nvme1n1 /dev/nvme2n1 - - Creates a Volume Group named devops-vg using the Physical Volume /dev/loop0
     2- vgs - show the details of volume.
    ##ss add
 

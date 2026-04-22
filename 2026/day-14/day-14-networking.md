@@ -15,14 +15,28 @@
    EX: curl https://example.com : → Application (HTTP) over Transport (TCP) over Internet (IP)
 
 ## Hands-on Checklist :
-   1- Identity - hostname -I - 
+   1- Identity : hostname -I - 
       Observation : hows my system’s private IP
       Conclusion :
-   2- Reachability - ping google.com
+   2- Reachability : ping google.com
       Observation :
       Conclusion :
-   3- Path - traceroute google.com
+   3- Path : traceroute google.com
       Observation
       Conclusion
+   4- Ports : ss -tulpn
+      Observation : 
+      Conclusion :
+   5- Name resolution - nslookup google.com
+      Obervation :
+      Conclusion :
+   6- HTTP check : curl -I https://google.com
+      Observation :
+      Conclusion :
+   7- Connections snapshot : netstat -an | head
+      Observation :
+      Conclusion :
+      
+    
    
         

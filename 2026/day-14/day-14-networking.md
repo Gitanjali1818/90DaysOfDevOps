@@ -21,6 +21,8 @@
    2- Reachability - ping google.com
       Observation :
       Conclusion :
-   3- Path -    
+   3- Path - traceroute google.com
+      Observation
+      Conclusion
    
         

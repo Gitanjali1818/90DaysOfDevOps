@@ -12,6 +12,15 @@
    4- DNS - Application layer
 
 ## Example :
-   EX: curl https://example.com :
+   EX: curl https://example.com : → Application (HTTP) over Transport (TCP) over Internet (IP)
+
+## Hands-on Checklist :
+   1- Identity - hostname -I - 
+      Observation : hows my system’s private IP
+      Conclusion :
+   2- Reachability - ping google.com
+      Observation :
+      Conclusion :
+   3- Path -    
    
         

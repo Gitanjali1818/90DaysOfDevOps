@@ -15,11 +15,21 @@
                4- MX – Defines mail servers for a domain
                5- NS – Specifies authoritative name servers for a domain
 
-           Cammand:
-               1- dig google.com
-           Sample output:
-              - A Record IP: 
-              - TTL: 300 seconds
+               Cammand:
+                    1- dig google.com
+               Sample output:
+                   - A Record IP: 
+                   - TTL: 300 seconds
+
+   ## Task 2: IP Addressing:
+            1- What is an IPv4 address? & How is it structured? 
+               An IPv4 address is a 32-bit number divided into 4 octets (e.g., 192.168.1.10), used to uniquely identify devices on a network.
+               
+            2- Difference between public and private IPs — give one example of each
+               - Public IPs: 
+               - Private IPs: 
+    
+          
 
 
 

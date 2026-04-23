@@ -36,6 +36,38 @@
    7- Connections snapshot : netstat -an | head
       Observation :
       Conclusion :
+
+## MINI TASK: Port Probe & Interpret:
+   1- Identify Port
+      Test:
+           nc -zv localhost 22
+           Output: Connection successful
+           Conclusion: Port is reachable
+           If NOT reachable → Next checks:
+                              systemctl status ssh
+                              firewall (ufw / iptables)
+ 2- Reflection: 
+     1- Fastest signal when broken?
+         ping → quickly tells if host is reachable.
+         curl → best for checking application/service health
+         
+     2- If DNS fails?
+         Check Application layer (DNS)
+         Then verify /etc/resolv.conf or DNS server
+         
+     3- If HTTP 500 error?
+         - Issue at Application layer
+         - Check server logs (nginx, app logs)
+
+ 3- Real Incident Follow-ups
+         - Check logs: journalctl -u <service>
+         - Verify ports/firewall: ss -tulpn, ufw status 
+        
+                              
+
+            
+    
+      
       
     
    

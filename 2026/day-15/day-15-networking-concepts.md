@@ -58,8 +58,11 @@
                /28	     255.255.255.240	       16	            14
 
 ## Task 4: Ports – The Doors to Services:
-         1- What is a port? Why do we need them?
-            -A port is a communication endpoint that helps identify specific services running on a system.
+         1- What is a port? 
+            - A port is a communication endpoint that helps identify specific services running on a system.
+
+         2- Why do we need them?
+            - Because one IP can run multiple services, ports help route traffic to the correct service.
       
                      
                   

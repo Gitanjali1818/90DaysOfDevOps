@@ -23,7 +23,8 @@
 
    ## Task 2: IP Addressing:
             1- What is an IPv4 address? & How is it structured? 
-               An IPv4 address is a 32-bit number divided into 4 octets (e.g., 192.168.1.10), used to uniquely identify devices on a network.
+               An IPv4 address is a 32-bit number divided into 4 octets (e.g., 192.168.1.10), 
+               used to uniquely identify devices on a network.
                
            2- Difference between public and private IPs — give one example of each
                - Public IPs: Accessible over the internet. Google DNS 8.8.8.8

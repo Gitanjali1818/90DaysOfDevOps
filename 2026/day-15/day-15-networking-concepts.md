@@ -66,6 +66,31 @@
 
          2- Why do we need them?
             - Because one IP can run multiple services, ports help route traffic to the correct service.
+
+         3- Document these common ports:
+            Port             Service
+             22                SSH
+             80                HTTP
+             443               HTTPS
+             53                DNS
+             3306              MySQL
+             6379              Redis
+             27017             MangoDB
+
+        4- Run ss -tulpn:
+           OUTPUT:
+
+## Task 5: Putting It Together:
+         1- curl http://myapp.com:8080 — what happens?
+            - DNS resolves myapp.com to an IP, then your system connects to that IP on port 8080 using HTTP.
+
+         2- Your app can't reach a database at 10.0.1.50:3306 — what would you check first?
+             - Check network connectivity (ping), port accessibility (telnet/nc), firewall rules,
+           
+
+
+           
+ 
       
                      
                   

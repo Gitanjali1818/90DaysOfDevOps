@@ -39,7 +39,7 @@
                 3- 192.168.0.0 to 192.168.255.255
 
            4- Run: ip addr show
-              output: add ip in real senirio
+              output: 172.31.47.255
 
 ## Task 3: CIDR & Subnetting:
            1- What does /24 mean in 192.168.1.0/24?
@@ -79,7 +79,7 @@
              27017             MangoDB
 
         4- Run ss -tulpn:
-           OUTPUT:
+           OUTPUT: 
 
 ## Task 5: Putting It Together:
          1- curl http://myapp.com:8080 — what happens?

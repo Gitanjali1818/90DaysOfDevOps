@@ -79,7 +79,7 @@
              27017             MangoDB
 
         4- Run ss -tulpn:
-           OUTPUT: 
+           OUTPUT: screen shot added
 
 ## Task 5: Putting It Together:
          1- curl http://myapp.com:8080 — what happens?

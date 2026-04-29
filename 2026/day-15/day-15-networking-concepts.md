@@ -20,8 +20,9 @@
                Cammand:
                     1- dig google.com
                Sample output:
-                   - A Record IP: 
-                   - TTL: 300 seconds
+                   - A Record IP: 142.251.33.206
+                   - TTL: 207 seconds
+                   
 
    ## Task 2: IP Addressing:
             1- What is an IPv4 address? & How is it structured? 

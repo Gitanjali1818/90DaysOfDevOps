@@ -51,7 +51,53 @@
 
 ## Task 4: If-Else Conditions:
      1- Create check_number.sh. Takes a number using read & Prints whether it is positive, negative, or zero.
-        Script: 
+        Script: #!/bin/bash
+               read -p "ente a number:" NUM
+               if 
+                  [$NUM -gt 0] then
+                     echo "Positive number"
+               elif [$NUM -L 0] then
+                     echo "Negative number"  
+               else
+                      echo "zero"
+               fi
+
+          OUTPUT:
+
+      2- Create file_check.sh. Asks for a filename & Checks if the file exists using -f. Prints appropriate message
+         Scripts: #!/bin/bash
+              read -p "Enter a filename: " FILE
+              if 
+                  [-f "$FILE"]; then
+                     echo "file exists"
+             else
+                     echo "file does not exists"
+             fi
+
+          OUTPUT:
+
+## Task 5: Combine It All:
+    1- Create server_check.sh.Store a service name in a variable. Asks the User, If y-runs then go to check systectl status, If no the print Skipped.
+       Scripts: #!/bin/bash
+        SERVICE="Nginx"
+         read -p "Do you want to check the status of $SERVICE (y/n): " choice
+           if ["$CHOICE" = "y"] then 
+              systemctl status $SERVICE 
+
+               if systemctl is-active --quite $SERVICE: then
+                  echo "$SERVICE is running"
+               else
+                  echo "$SERVICE is NOT running"
+               fi 
+           else 
+                  echo "skipped"
+           fi
+
+           OUTPUT:
+               
+               
+              
+                     
      
         
        

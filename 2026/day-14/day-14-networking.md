@@ -17,29 +17,35 @@
 ## Hands-on Checklist :
    1-   Identity : hostname -I - 
         Observation : hows my system’s private IP
+        
         Conclusion :
         
    2-  Reachability : ping google.com
        Observation :
+       
        Conclusion :
        
    3-  Path : traceroute google.com
-       Observation
-       onclusion
+       Observation:
+       
+       conclusion
        
    4-  Ports : ss -tulpn
-       Observation : 
+       Observation :
+       
        Conclusion :
        
    5-  Name resolution - nslookup google.com
        Obervation :
+       
        Conclusion :
        
    6-  HTTP check : curl -I https://google.com
-       onclusion :
+       conclusion :
        
    7-  Connections snapshot : netstat -an | head
        Observation :
+       
        Conclusion :
        
 
@@ -54,8 +60,8 @@
                                 firewall (ufw / iptables)
 
                                 
- 2- Reflection: 
- 
+    
+      2- Reflection: 
        1-  Fastest signal when broken?
            ping → quickly tells if host is reachable.
            curl → best for checking application/service health

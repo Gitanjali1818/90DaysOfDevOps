@@ -57,7 +57,7 @@
                if 
                   [$NUM -gt 0] then
                      echo "Positive number"
-               elif [$NUM -L 0] then
+               elif [$NUM -lt 0] then
                      echo "Negative number"  
                else
                       echo "zero"
@@ -80,10 +80,11 @@
                      echo "file does not exists"
              fi
 
-          OUTPUT:
+          OUTPUT:enter the file name:file_check.sh
+                  file doesn't exists
 
 ## Task 5: Combine It All:
-    1- Create server_check.sh.Store a service name in a variable. Asks the User, If y-runs then go to check systectl status, If no the print Skipped.
+    1- Create server_check.sh. Store a service name in a variable. Asks the User, If y-runs then go to check systectl status, If no the print Skipped.
        Scripts: #!/bin/bash
         SERVICE="Nginx"
          read -p "Do you want to check the status of $SERVICE (y/n): " choice

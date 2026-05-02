@@ -14,7 +14,7 @@
      Bash command: chmod +X hello.sh
                    ./hello.sh
 
-     Output:              
+     Output: hello,devops!            
 
     2-  What happens if you remove the shebang line?
         1- Without shebang the system decides which shell to use.
@@ -30,14 +30,15 @@
                ROLE: "DevOps Engineer"
                echo "Hello, I am $NAME and I am a $ROLE"
        Bash command: ./variables.sh
+       
 
-       Output:
+       Output: Hello, I am Geet and I am a DevOps Engineer
 
     2- using single quotes vs double quotes:
        Script: echo 'hello $NAME'
-       (Output: Hello $NAME) 
+       (Output: hello, $NAME) 
                echo "hello $NAME"
-       (Output: Hello Geet)
+       (Output: hello, Geet)
 
 ## Task 3: User Input with read:
      1- Create read.sh. Asks the user for their name & Asks for their favourite tool.
@@ -47,7 +48,7 @@
 
                    echo "Hello $name, your favourite tool is $tool"
 
-        Output:
+        Output:hello, geet, your favourite tool is git
 
 ## Task 4: If-Else Conditions:
      1- Create check_number.sh. Takes a number using read & Prints whether it is positive, negative, or zero.
@@ -62,11 +63,16 @@
                       echo "zero"
                fi
 
-          OUTPUT:
+          OUTPUT:enter a number:5
+                 positive number
+                 enter a number:-6
+                 negative number
+                 enter a number:0
+                 zero
 
       2- Create file_check.sh. Asks for a filename & Checks if the file exists using -f. Prints appropriate message
          Scripts: #!/bin/bash
-              read -p "Enter a filename: " FILE
+              read -p "Enter a filename:" FILE
               if 
                   [-f "$FILE"]; then
                      echo "file exists"

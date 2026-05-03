@@ -119,6 +119,28 @@
             fi
 
            OUTPUT:
+
+           #!/bin/bash
+
+# Take package name
+read -p "Enter package name: " package_name
+
+sudo apt-get update
+sudo apt-get install $package_name -y
+echo "Updating system and installing $package_name"
+
+# Take service name
+read -p "Enter service name: " service_name
+
+# Ask yes/no and directly use in if
+read -p "Check service status? (y/n): " yn
+
+if [ "$yn" = "y" ]; then
+    sudo systemctl start $service_name
+    sudo systemctl status $service_name
+else
+    echo "Skipped"
+fi
             
                
                  

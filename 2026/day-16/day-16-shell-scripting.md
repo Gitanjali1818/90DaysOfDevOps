@@ -86,27 +86,32 @@
 ## Task 5: Combine It All:
     1- Create server_check.sh. Store a service name in a variable. Asks the User, If y-runs then go to check systectl status, If no the print Skipped.
        Scripts: #!/bin/bash
-        SERVICE="Nginx"
-         read -p "Do you want to check the status of $SERVICE (y/n): " choice
-           if ["$CHOICE" = "y"] then 
-              systemctl status $SERVICE 
+                # This script takes the package name from user.
+                 read -p "enter the $package_name:" package_name
+                 sudo apt get update 
+                 sudo apt install $package_name -y
+                 echo "updating system and installing $package_name"
+                 read -p "enter the $service_name:" service_name
+                 sudo systemctl start $service_name
+                 sudo systemctl status $service_name
+       OUTPUT:   
+              enter the :package_name: docker.io
+              enter the :service_name: docker
+                   ● ip-172-31-44-56
+                     State: running
+              
+            
+                 
 
-               if systemctl is-active --quite $SERVICE: then
-                  echo "$SERVICE is running"
-               else
-                  echo "$SERVICE is NOT running"
-               fi 
-           else 
-                  echo "skipped"
-           fi
-
-           OUTPUT:
                
+         
+        
+          
                
               
                      
      
-        
+      
        
 
                

@@ -99,7 +99,29 @@
               enter the :service_name: docker
                    ● ip-172-31-44-56
                      State: running
-              
+
+     2- in IF-ELSE format:
+          Script: #!/bin/bash
+             read -p "enter the $package_name:" package_name
+             sudo apt get update
+             sudo apt install $package_name -y
+             echo "updating system and installing $package_name"
+
+             read -p "enter the $service_name:" service_name
+             read -p "check the service status (y/n):" y
+             if 
+               [ "$yn" = "y" ]; then 
+               sudo systemctl start $service_name
+               sudo systemctl status $service_name 
+            else
+                echo "skipped"
+
+            fi
+
+           OUTPUT:
+            
+               
+                 
             
                  
 

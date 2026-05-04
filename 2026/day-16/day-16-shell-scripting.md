@@ -102,46 +102,47 @@
 
      2- in IF-ELSE format:
           Script: #!/bin/bash
-             read -p "enter the $package_name:" package_name
-             sudo apt get update
-             sudo apt install $package_name -y
-             echo "updating system and installing $package_name"
+                  # Take package name
+                     read -p "Enter package name: " package_name 
+                     sudo apt-get update
+                     sudo apt-get install $package_name -y
+                     echo "Updating system and installing $package_name"
 
-             read -p "enter the $service_name:" service_name
-             read -p "check the service status (y/n):" y
-             if 
-               [ "$yn" = "y" ]; then 
-               sudo systemctl start $service_name
-               sudo systemctl status $service_name 
-            else
-                echo "skipped"
+                     # Take service name
+                       read -p "Enter service name: " service_name
 
-            fi
+                     # Ask yes/no and directly use in if
+                       read -p "Check service status? (y/n): " yn
 
-           OUTPUT:
+                       if [ "$yn" = "y" ]; then
+                            sudo systemctl start $service_name
+                            sudo systemctl status $service_name
+                       else
+                             echo "Skipped"
+                       fi
+             OUTPUT:
+                    1- enter the package name: docker.io
+                    2- enter the service name: docker
+                    3- check the service status? (y/n): y
+                       ● docker.service - Docker Application Container Engine
+                         Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; preset: enabled)
+                         Active: active (running) since Mon 2026-05-04 08:42:45 UTC; 1h 19min ago
+                    
+                       
 
-           #!/bin/bash
 
-# Take package name
-read -p "Enter package name: " package_name
 
-sudo apt-get update
-sudo apt-get install $package_name -y
-echo "Updating system and installing $package_name"
+             
 
-# Take service name
-read -p "Enter service name: " service_name
+          
 
-# Ask yes/no and directly use in if
-read -p "Check service status? (y/n): " yn
 
-if [ "$yn" = "y" ]; then
-    sudo systemctl start $service_name
-    sudo systemctl status $service_name
-else
-    echo "Skipped"
-fi
-            
+
+
+
+
+
+
                
                  
             

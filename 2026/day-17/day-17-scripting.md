@@ -140,7 +140,23 @@
            OUTPUT: nginx is already installed. Skipping...
                    curl is already installed. Skipping...
                    wget is not installed. Installing...
-                   wget installed successfully.    
+                   wget installed successfully.  
+
+
+## Task 5: Error Handling :
+       1- Create safe_script.sh that: 1- Uses set -e at the top (exit on error)
+                                      2- Tries to create a directory /tmp/devops-test
+                                      3- Tries to navigate into it
+                                      4- Creates a file inside
+                                      5- Uses || operator to print an error if any step fails 
+
+       ## Script:
+          #!/bin/bash
+
+          set -e
+            
+
+                   
             
 
              

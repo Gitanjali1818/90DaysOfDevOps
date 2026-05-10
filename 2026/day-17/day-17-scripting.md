@@ -72,11 +72,89 @@
 
       Bash: chmod +x greet.sh
              ./greet.sh
-      OUTPUT:
+      OUTPUT:1-  1- ./greet.sh Gitanjali
+                     O/P: Hello, Gitanjali!
+                 2- ./greet.sh
+                     O/P: "usage: ./greet.sh <name>"
 
 
-      2- 
+      2- Create args_demo.sh that : 1- Prints total number of arguments ($#)
+                                    2- Prints all arguments ($@)
+                                    3- Prints the script name ($0)
+
+         ##Script:
+            #!/bin/bash
+
+            echo "script name: $0"
+            echo "total arguments: $#"
+            echo "all arguments: $@"
+
+            OUTPUT: 1- ./args_demo.sh dev prod test pre-prod
+                     O/P: Script name: ./args_demo.sh
+                           Total arguments: 4
+                           All arguments: dev prod test pre-prod
+
+## Task 4: Install Packages via Script:
+
+       1- Create install_packages.sh that: 1- Defines a list of packages: nginx, curl, wget
+                                           2- Loops through the list
+                                           3- Checks if each package is installed (use dpkg -s or rpm -q)
+                                           4- Installs it if missing, skips if already present
+                                           5- Prints status for each package
+
+      ##Script:
+        #!/bin/bash
+
+          #Exit if not root
+
+          if [ "$EUID" -ne 0 ]
+          then
+              echo "Please run this script as a root"
+           exit 1
+           fi
+
+           packages=("nginx" "curl" "wget")
+            for package in "${package [@]}"
+           do 
+               if dpkg -s $packages  >= /dev/null
+           then
+               echo "$package is already installed. skipping..."
+           else
+               echo "$package is installed. Installing... "
+
+               apt update -y
+               apt install $package -y
+
+              if [ $? -eq 0 ] 
+                 then
+                    echo "$package installed successfully."
+                 else
+                    echo "failed to installed $package."
+                 fi
+             fi   
+           done   
+
+           Bash: 1- chmod +x install_packages.sh
+                 2- sudo ./install_packages.sh
+                 
+           OUTPUT: nginx is already installed. Skipping...
+                   curl is already installed. Skipping...
+                   wget is not installed. Installing...
+                   wget installed successfully.    
+            
+
              
+         
+
+                                           
+
+                                           
+
+
+
+                  
+            
+            
       
         
             

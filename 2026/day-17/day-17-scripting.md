@@ -164,6 +164,11 @@
               }
                 echo "file created successfully"
 
+        Bash: 1- chmod +x safe_script.sh
+              2- ./safe_script.sh
+
+       OUTPUT: File created successfully       
+
             
 
           

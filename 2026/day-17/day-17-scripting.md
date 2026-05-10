@@ -23,7 +23,32 @@
      Bash: chmod +x count.sh
            ./count.sh
 
-    OUTPUT:        
+    OUTPUT:     
+
+## Task 2: While Loop:
+
+    1- Create countdown.sh that : 1- Takes a number from the user  
+                                  2- Counts down to 0 using a while loop 
+                                  3- Prints "Done!" at the end
+
+       #!/bin/bash                            
+
+
+
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+    
 
      
     

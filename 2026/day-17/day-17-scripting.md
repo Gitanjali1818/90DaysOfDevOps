@@ -7,15 +7,19 @@
         ##Script:
         
         #!/bin/bash
-        fruits=("Mango" "Banana" "Apple" "Avacado" "Orange")
+        fruits=("mango" "banana" "orange" "avacado" "cherry")
         for fruit in "${fruits[@]}"
         do
-        echo "fruit: $fruit"
+        echo "fruit: $fruits"
         done 
         Bash : chmod +x for_loop.sh
                ./for_loop.sh
 
-        OUTPUT:
+        OUTPUT: fruit: mango
+                fruit: banana
+                fruit: orange
+                fruit: avacado
+                fruit: cherry
     
     2- Create count.sh that: Prints numbers 1 to 10 using a for loop
 
@@ -29,7 +33,16 @@
         Bash: chmod +x count.sh
               ./count.sh
 
-        OUTPUT:     
+        OUTPUT: 1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10    
 
 ## Task 2: While Loop:
 
@@ -51,7 +64,22 @@
        Bash : chmod +x countdown.sh
               ./countdown.sh
 
-       OUTPUT:
+       OUTPUT: enter a number: 5
+                               5
+                               4
+                               3
+                               2
+                               1
+                               0
+                               Done!
+             ubuntu@ip-172-31-44-56:~/2026/day-17$ ./countdown.sh
+               enter a number: 3
+                               3
+                               2
+                               1
+                               0
+                               
+                               Done!
 
 
 ## Task 3: Command-Line Arguments:
@@ -120,7 +148,7 @@
            then
                echo "$package is already installed. skipping..."
            else
-               echo "$package is installed. Installing... "
+               echo "$package is not installed. Installing... "
 
                apt update -y
                apt install $package -y
@@ -137,10 +165,9 @@
            Bash: 1- chmod +x install_packages.sh
                  2- sudo ./install_packages.sh
                  
-           OUTPUT: nginx is already installed. Skipping...
-                   curl is already installed. Skipping...
-                   wget is not installed. Installing...
-                   wget installed successfully.  
+           OUTPUT: nginx is already installed. skipping..
+                   curl is already installed. skipping..
+                   wget is already installed. skipping..
 
 
 ## Task 5: Error Handling :
@@ -167,7 +194,12 @@
         Bash: 1- chmod +x safe_script.sh
               2- ./safe_script.sh
 
-       OUTPUT: File created successfully       
+       OUTPUT: mkdir: /tmp/devops-test: File exists
+                    Directory already exists
+                    File created successfully
+       OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-17$ cd /tmp/devops-test/
+               ubuntu@ip-172-31-44-56:/tmp/devops-test$ ls
+                                      demo.txt              
 
             
 

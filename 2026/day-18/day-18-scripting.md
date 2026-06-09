@@ -62,7 +62,116 @@
        OUTPUT:
 
      3- set -o pipefail : If cat file.txt fails, the pipeline may still succeed.
-                          With pipefail, failure of any command in pipeline causes entire pipeline to fail.   
+                          With pipefail, failure of any command in pipeline causes entire pipeline to fail. 
+
+     ## DOCUMENTS:
+     1- set -u: Treat undefined variables as errors.
+     2- set -e: Exit immediately if any command returns a non-zero status.
+     3- set -o pipefail: Pipeline returns failure if any command inside it fails.
+
+
+## Task 4: Local Variables:
+    vim local_demo.sh
+      #!/bin/bash
+       #using local variables
+       #without local variables
+
+          show_local() {
+           local message="Inside functions"
+           echo "$messages"
+           }
+
+           show_global() {
+           text="Global Variable"
+           echo "$text"
+           }
+
+           show_local
+
+           echo "Outside functions"
+           echo "${message:- variable not accesible}"
+
+           echo
+
+           show_global
+           echo "Outside functions:"
+           echo "$text"
+
+
+    OUTPUT:
+          Inside Function
+          Outside function:
+          Variable not accessible
+
+         Global Variable
+         Outside function:
+         Global Variable
+
+
+
+## Task 5: Build a Script — System Info Reporter:
+    vim system_info.sh
+      #!/bin/bash
+
+      set -euo pipefail
+
+      #hostname and OS info
+
+        system_info() {
+          echo "========SYSTEM INFORMATION========"
+            echo "hostname : $(hostname)"
+            echo "OS : $(grep PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '"')"
+            }
+
+       #uptime
+
+          show_uptime() {
+            echo
+            echo "=========UPTIME========"
+             uptime -p
+             }
+
+       #Disk Usage:
+          disk_usage() {
+          echo
+          echo "=========TOP 5 FILESYSTEM USAGE======="
+            df -h | head -n 6
+            }
+
+       #Memory Usage 
+         memory_usage() {
+           echo
+           echo "========MEMORY USAGE======="
+           free -h
+           }
+
+       #Top 5 CPU processes
+         main () {
+           system_info
+           show_uptime
+           disk_usage
+           memory_usage
+           cpu_processes
+
+           }
+           main
+           
+         
+         
+            
+         
+      
+         
+
+
+         
+
+           
+           
+     
+     
+     
+     
                           
 
                          

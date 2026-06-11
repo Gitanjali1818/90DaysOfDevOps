@@ -168,18 +168,18 @@ OUTPUT:
 
 ## What i learned:
 
- 1- Functions make scripts reusable.
-    1- Functions reduce duplicate code.
-    2- Arguments are passed using $1, $2, etc.
+     1- Functions make scripts reusable.
+        1- Functions reduce duplicate code.
+        2- Arguments are passed using $1, $2, etc.
 
- 2- Local variables improve scope.
-    1- Variables declared with local exist only inside functions.
-    2- Prevent accidental modification of global variables.
+     2- Local variables improve scope.
+        1- Variables declared with local exist only inside functions.
+        2- Prevent accidental modification of global variables.
 
- 3- set -euo pipefail makes scripts safer.
-    1- -e → Exit on command failure.
-    2- -u → Error on undefined variables.
-    3- pipefail → Detect failures inside pipelines.
+     3- set -euo pipefail makes scripts safer.
+        1- -e → Exit on command failure.
+        2- -u → Error on undefined variables.
+        3- pipefail → Detect failures inside pipelines.
 
     
          

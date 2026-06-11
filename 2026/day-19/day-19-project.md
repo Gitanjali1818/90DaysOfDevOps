@@ -77,17 +77,17 @@
 
 ## Task 3: Crontab:
 
-   1- Check current schedules
-       crontab -l
+        1- Check current schedules
+            crontab -l
 
-   2- Run log_rotate.sh daily at 2 AM
-       0 2 * * * /home/ubuntu/2026/day-19/log_rotate.sh /var/log/myapp  
+        2- Run log_rotate.sh daily at 2 AM
+            0 2 * * * /home/ubuntu/2026/day-19/log_rotate.sh /var/log/myapp  
 
-   3- Run backup.sh every Sunday at 3 AM
-       0 3 * * 0 /home/ubuntu/2026/day-19/backup.sh /home/ubuntu/data /home/ubuntu/backups
+        3- Run backup.sh every Sunday at 3 AM
+             0 3 * * 0 /home/ubuntu/2026/day-19/backup.sh /home/ubuntu/data /home/ubuntu/backups
 
-   4- Run health check every 5 minutes
-       */5 * * * * /home/ubuntu/2026/day-19/health_check.sh
+        4- Run health check every 5 minutes
+              */5 * * * * /home/ubuntu/2026/day-19/health_check.sh
 
 
 ## Task 4: Combined Scheduled Maintenance Script:

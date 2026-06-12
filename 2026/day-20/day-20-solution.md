@@ -53,8 +53,44 @@
                 echo "No error message found"
              else
                 echo "$TOP_ERRORS"
-             FI
+             fi
+           
+           #Generate report
+             {
+             echo "==============================="
+             echo "   LOG ANALYSYS REPORT"
+             echo "==============================="
+             echo "Date of analysy: $TODAY"
+             echo "Log files      : $LOGFILE"
+             echo "Total lines    : $TOTAL_LINES"
+             echo "Error counts   : $ERROR_COUNT"
 
+             echo
+             echo "====Top 5 Error Message====="
+            if [ -z "$TOP_ERRORS" ]; then
+              echo "No ERROR message found"
+            else
+              echo "$TOP_ERRORS"
+            fi
+
+              echo
+              echo "========Critical events======="
+             if [ -z "$CRITICAL_EVENTS" ]  
+               echo "No critical events found"
+             else
+               echo "$CRITICAL_EVENTS"
+             fi
+
+             } > "$REPORT"
+                echo
+                echo "Summary report generated: &Report"  
+
+            # Optional Task - Archive log file
+                mkdir -p archive
+
+               mv "$LOGFILE" archive/
+
+               echo "Processed log moved to archive/"
              
              
              

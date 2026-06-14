@@ -66,6 +66,71 @@
          fi
 
        5- Logical operators:
+          NO   DOCUMENTS          EXAMPLE                              EXPLANATION
+          1-    &&         [ -f file ] && echo "Found"     if the file exists then print "Found"
+          2-    ||         [ -f file ] || echo "Missing"   If the does not exists then print "Missing"
+          3-    !          ! [ -f file ]                   Is the file NOT present?
+
+      6- Case statements:  case ... esac
+          case $choice in 
+           1) 
+             echo "Start" 
+             ;;
+           2) 
+              echo "Stop" 
+              ;; 
+           *) 
+              echo "Invalid" 
+              ;; 
+           esac
+
+## Task 3: Loops:
+       1- for loop: 
+           1- List-based
+             for i in 1 2 3
+               echo "$i"
+             done
+           2- C-Style
+             for ((i=1;i<=5:i++))
+              do
+               echo "$i"
+             done
+             
+       2- while loop:
+          count=1
+           while [ $count -le 5 ]
+           do 
+              echo $count
+              ((count++))
+           done
+
+      3- Untill loop:
+         count=1
+          untill [ $count -ge 5 ]
+          do
+             echo $count
+             ((count++))
+          done
+
+      4- Loop control:
+           1- Break
+             for i in {1..10}
+             do 
+                 [ $i -eq 5 ] && break
+                 echo $i
+             done 
+           2- Continue:
+              for i {1..5}
+              do
+                 [ ]
+             
+           
+       
+           
+         
+           
+         
+          
           
 
              

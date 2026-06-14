@@ -54,5 +54,23 @@
           6-     -x       [ -x file ]          Can the file be exicuted?
           7-     -s       [ -s file]           Is the file non-empty (size > 0)?
 
+      4- if, elif, else syntax:
+         if [ -f file.txt ]; 
+          then
+             echo "EXISTS"
+         elif [ -d Backup ];
+           then
+             echo "DIRCTORY'
+         else  
+             echo "NOT FOUND"
+         fi
+
+       5- Logical operators:
+          
+
+             
+             
+          
+
             
           

@@ -1,5 +1,6 @@
 ## Day 20 – Bash Scripting Challenge: Log Analyzer and Report Generator
 
+## 1. log_analyzer.sh:
     1- vim log_analyzer.sh
     2- #!/bin/bash
         #Log analyzer and report generator

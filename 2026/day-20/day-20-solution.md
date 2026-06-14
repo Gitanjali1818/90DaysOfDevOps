@@ -92,6 +92,20 @@
                mv "$LOGFILE" archive/
 
                echo "Processed log moved to archive/"
+
+               
+
+## 2. Sample Log File (sample_log.log):
+     OUTPUT:
+
+
+## 3. Running the Script:
+     1- chmod +x log_analyzer.sh
+     2- ./log_analyzer.sh sample_log.log
+     3-  Sample output:
+     4-  Generated Report (log_report_2026-07-29.txt
+         
+     
              
              
              

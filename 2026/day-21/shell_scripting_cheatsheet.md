@@ -240,11 +240,35 @@
         6- Parse JSON.
              jq '.name' file.json
 
-         7- Real-Time Error Monitoring.
+        7- Real-Time Error Monitoring.
               tail -f app.log | grep ERROR
 
 
 ## Task 7: Error Handling and Debugging:
+          1- Exit codes:
+               success:
+               Exit 0
+               failure:
+               exit 1
+               Last command Status:
+               echo $?
+
+            2- set -e:
+                exit on first error: set -e
+
+            3- set -u:
+                treat unset variables as error: set -u
+
+            4- set -o pipefail:
+                 catch errors in pipes: set -o pipefail
+
+            5- set -x:
+               debug mode: set -x
+
+            6- Trap:
+                
+                 
+      
        
 
               

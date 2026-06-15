@@ -169,21 +169,96 @@
                }
 
 ## Task 5: Text Processing Commands:
-       1- grep
-           grep error file.log
-           grep -i error file.log
-           grep -r error
-           grep -c error file.log
-           grep -n error file.log
-           grep -v error file.lof
-           grep -E "error|warning" file.log
+       1- grep:
+           -grep error file.log
+           -grep -i error file.log
+           -grep -r error
+           -grep -c error file.log
+           -grep -n error file.log
+           -grep -v error file.lof
+           -grep -E "error|warning" file.log
+
+        2- awk:
+            -print columns: awk '{print $1}' file.txt
+            -field separator: awk -F: '{print $1}' /etc/passwd
+            -patterns: awk "/error/ {print}' log.txt
+            -BEGIN/END: awk "BEGIN {print "start"} {print $1} END{print "done"}" file 
+
+        3- sed:
+            -substitution: sed "s/old/new/g' file.txt
+            -Delete lines: sed '3D' file.txt
+            -In-place edit: sed -i 's/foo/bar/g' file.txt
+
+        4- cut:
+            -cut -d: -f1 /etc/passwd
+
+        5- sort:
+            -alphabetical: sort file.txt
+            -numerical: sort-n file.txt
+            -reverse: sort -r file.txt
+            -unique: sort -u file.txt
+
+         6- uniq:  
+             -deduplicate: uniq file.txt
+             -count: uniq -c file.txt
+
+         7- tr:
+             -Lowercase to uppercase: echo "linux" | tr a-z A-Z
+             -Delete characters: echo "abc123" | tr -d 0-9
+
+         8- wc:
+             -wc file.txt
+             -line: wc -l file.txt
+             -word: wc -w file.txt
+             -chart count: wc -c file.txt
+
+         9- head: first/last N lines
+             -head file.txt
+             -head -5 file.txt
+
+         10-Tail: first/last N lines
+            -tail file.txt
+            -tail -5 file.txt
+            -follow mode: tail -f app.log
+
+## Task 6: Useful Patterns and One-Liners:
+        1- delete files older than 7 days
+             find . -type f -mtime +7 -delete
+            
+        2- Count lines in all .log files.
+              wc -l *.log
+
+        3- Replace a string across files.
+             sed -i 's/localhost/server1/g' *.conf
+
+        4- Check Service Status.
+             systemctl status nginx
+
+        5- disk usage with alerts.
+            df -h | awk '$5+0 > 80'
+
+        6- Parse JSON.
+             jq '.name' file.json
+
+         7- Real-Time Error Monitoring.
+              tail -f app.log | grep ERROR
+
+
+## Task 7: Error Handling and Debugging:
+       
+
+              
+            
+            
+              
+            
                
          
             
              
            
        
-           
+
          
            
          

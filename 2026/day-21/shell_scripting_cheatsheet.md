@@ -122,7 +122,64 @@
            2- Continue:
               for i {1..5}
               do
-                 [ ]
+                 [ $i -eq 3 ] && continue
+                 echo $i
+              done
+
+       5- Looping over files:
+           for file in *.log
+           do
+             echo $file
+           done
+
+       6- Looping over command output:
+            cat names.txt | while read line
+            do
+               echo &line
+            done
+
+## Task 4: Functions:
+       1- Defining a function:
+             greet() {
+                echo "Hello"
+             }
+
+       2- Calling a function:
+             greet
+
+       3- Passing arguments to functions:
+            sum() {
+               echo $(($1+$2))
+               }
+             sum 10 20
+
+       4- Return values:
+            square() {
+              echo (($1*$1))
+              }
+               result=$(square 5)
+
+                Return code:
+                  return 0
+
+       5- Local variables:
+            greet() {
+              Local name="DevOps"
+               echo $name
+               }
+
+## Task 5: Text Processing Commands:
+       1- grep
+           grep error file.log
+           grep -i error file.log
+           grep -r error
+           grep -c error file.log
+           grep -n error file.log
+           grep -v error file.lof
+           grep -E "error|warning" file.log
+               
+         
+            
              
            
        

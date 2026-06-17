@@ -1,5 +1,8 @@
 ## Day 21 – Shell Scripting Cheat Sheet: Build Your Own Reference Guide
 
+
+
+
 ## Task 1: Basics: Document the following with short descriptions and examples:
 
       1- Shebang (#!/bin/bash): tells the system to run the script using the Bash shell.
@@ -266,6 +269,11 @@
                debug mode: set -x
 
             6- Trap:
+                Run cleanup forever exit
+                    cleanup() {
+                       rm -f temp.txt
+                       }
+                       trap cleanup EXIT.
                 
                  
       

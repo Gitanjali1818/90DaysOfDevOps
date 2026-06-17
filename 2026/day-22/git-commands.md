@@ -81,6 +81,10 @@
 
 ## Task 6: Understand the Git Workflow:
         1- What is the difference between git add and git commit?
+           -git add moves the file into staging area.
+           -git commit permanently saves the staged changes in to the repo history.
+
+        2- What does the staging area do? Why doesn't Git just commit directly?
            
              
        

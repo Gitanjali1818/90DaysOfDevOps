@@ -85,6 +85,8 @@
            -git commit permanently saves the staged changes in to the repo history.
 
         2- What does the staging area do? Why doesn't Git just commit directly?
+           -The staging area allows us to select which changes should be included in the next commit.
+           
            
              
        

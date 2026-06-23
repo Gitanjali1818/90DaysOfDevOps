@@ -53,9 +53,51 @@
 
 ## Task 3: Push to GitHub
    
-      1- Create a new repository on GitHub (do NOT initialize it with a README)
-          git remote add origin (https://github.com/<username>/devops-git-practice.git)
+       1- Create a new repository on GitHub (do NOT initialize it with a README)
+           git remote add origin (https://github.com/<username>/devops-git-practice.git)
       
-          2- Verify: git remote -v   
+            2- Verify: git remote -v   
 
-       2- Push your main branch to GitHub   
+       2- Connect your local devops-git-practice repo to the GitHub remote
+
+       3- Push your main branch to GitHub
+          git push origin main
+
+       4- Push feature-1 branch to GitHub
+           git push origin feature-1
+
+       5- Verify both branches are visible on GitHub
+          yes
+
+       6-  What is the difference between origin and upstream?
+           Origin: It is your own github repository
+           upstream: Original repository from which you forked a project. 
+                     Used to keep your fork updated with the original repository.
+
+
+## Task 4: Pull from GitHub
+
+      1- After editing a file directly on GitHub:
+         git pull origin main
+         cat index.tml
+
+       2- What is the difference between git fetch and git pull?
+          Git fetch: Downloads the changes from remote repository
+                     does not merge the changes into the current branch
+          Git pull: performs git fetch + git merge           
+                    Downloads and immediately integrates remote changes into the current branch.
+
+
+## Task 5: Clone vs Fork
+      
+
+
+
+            
+        
+                     
+
+
+
+
+          

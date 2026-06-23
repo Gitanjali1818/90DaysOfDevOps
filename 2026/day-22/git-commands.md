@@ -86,7 +86,29 @@
 
         2- What does the staging area do? Why doesn't Git just commit directly?
            -The staging area allows us to select which changes should be included in the next commit.
+           -Git doesn't commit directly because the staging area gives you control, flexibility, and a clean commit history.
+
+        3- What information does git log show you?
+           - git log displays-
+             1- commit ID
+             2-  Author name
+             3- Email
+             4- Date & Time
+             5- Commit message
+
+         4- What is the .git/ folder and what happens if you delete it?
+            -The .git folder contains all repository metadata, objects, branches, and commit history.
+            -Deleting the .git folder removes version control and commit history from the project.
+
+         5- What is the difference between a working directory, staging area, and repository?
+            - Working directory:
+              current file being edited.
+            -Staging area:
+             temporary place where the changes are prepared for commit.
+            -Repository:
+             Permanand storage containing all commits and history.  
            
+
            
              
        

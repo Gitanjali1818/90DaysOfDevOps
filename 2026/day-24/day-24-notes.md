@@ -62,7 +62,55 @@
 
 
 ## Task 2: Git Rebase — Hands-On:
-                     
-           
+
+       1- Create a branch feature-dashboard from main, add 2-3 commits 
+          -git chechkout main
+          -git checkout -b feature-dashboard
+          -vim dashboard.txt
+           (create dashboard UI)
+          -git add .
+          -git commit -m "feat: added dashboard UI"
+          -vim dashboard.txt
+            (it is a dashboard API)
+          -git add .
+          -git commit -m "feat: added dashboard API"
+       2- While on main, add a new commit (so main moves ahead) 
+          -git checkout main
+          -vim README.md
+            (this is the project info)
+          -git add .
+          -git commit -m "docs:update the project info"
+          -git checkout main
+          -git rebase main
+          -git log --oneline
+        3- What does rebase actually do to your commits?
+           -It moves your commits on top of the latest changes from another branch to keep history clean.
+        4- How is the history different from a merge?
+           -Merge keeps branch history and creates a merge commit, while rebase creates a straight, clean history.
+        5- Why should you never rebase commits that have been pushed and shared with others?
+           -Because it changes commit history and can cause conflicts for other developers.
+        6- When would you use rebase vs merge?
+           Rebase:
+           - To keep the commit history linear and easy to read.
+           - To update your branch with the latest changes from main.
+           - When the commits haven't been shared with others yet.
+           Merge:
+           - When multiple developers are working on branches.
+           - When the branch has already been pushed and shared with others.
+           - When preserving branch history is important.
+           ** Use rebase to keep history clean, and use merge when working with 
+              shared branches and preserving branch history is important.
+
+
+## Task 3: Squash Commit vs Merge Commit:
+
+      1- Create a branch feature-profile, add 4-5 small commits (typo fix, formatting, etc.)
+         - git checkout -m feature-profile
+         - git commit -m "fix: typo"
+         - git commit -m "style: formatting"
+         - git commit -m "feat: profile image"
+         - git commit -m "fix: validation"
+         
+              
 
    

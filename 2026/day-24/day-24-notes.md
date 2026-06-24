@@ -110,6 +110,26 @@
          - git commit -m "style: formatting"
          - git commit -m "feat: profile image"
          - git commit -m "fix: validation"
+      2- Merge it into main using --squash — what happens?
+         - git checkout main
+         - git merge --squash feature-profile
+         - git commit -m "feat: add profile feature"
+         OUTPUT: after squash
+       3- Check git log — how many commits were added to main?
+         - git log --oneline
+           OUTPUT: only one commit is added
+       4- Now create another branch feature-settings, add a few commits
+          - git checkout -b feature-setting
+       5- Merge it into main without --squash (regular merge) — compare the history
+          - git checkout main
+          - git merge feature-setting
+       6- What does squash merging do?
+          - Combines multiple commits into one before merging.
+       7- When would you use squash merge vs regular merge?
+         - Squash merge: small commits, typo, cleanup commit, cleaner history
+         - regural merge: When preserving commit history matters.
+       8- What is the trade-off of squashing?
+         - Individual commit history is lost.
          
               
 

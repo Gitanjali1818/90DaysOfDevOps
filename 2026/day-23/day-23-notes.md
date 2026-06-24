@@ -77,9 +77,9 @@
 
 ## Task 4: Pull from GitHub
 
-      1- After editing a file directly on GitHub:
-         git pull origin main
-         cat index.tml
+       1- After editing a file directly on GitHub:
+          git pull origin main
+          cat index.tml
 
        2- What is the difference between git fetch and git pull?
           Git fetch: Downloads the changes from remote repository
@@ -89,8 +89,32 @@
 
 
 ## Task 5: Clone vs Fork
-      
+       1- Clone any public repository from GitHub to your local machine
+           Practical 
 
+       2- Fork the same repository on GitHub, then clone your fork
+          Practical
+
+       3- What is the difference between clone and fork?
+                          Clone                                                    fork
+          1- creat a local copy of an existing repository         Creat a copy of someone else repository under your github account
+          2-             github operation                                       Github feature
+
+        4- When would you clone vs fork?
+           1- Clone: -when you have a direct access to the repository
+                     - Personal project OR team repository
+           2- Fork:  -when contributing to someone else ope source project.
+                     -when you do not have a right access of the original repository.
+
+        5- After forking, how do you keep your fork in sync with the original repo?
+           1. Add original repository as upstream:
+              git remote add main <original-repository-url>
+           2. Fetch updates:
+              git fetch main
+           3. Merge changes:
+              git merge main
+                OR
+              git pull main  
 
 
             

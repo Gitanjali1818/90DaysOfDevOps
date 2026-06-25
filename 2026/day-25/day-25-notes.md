@@ -22,4 +22,54 @@
          - --mixed: removed the commits and unstaged changes.
          - --hard: removed the commits and delete all changes.
       6- Which one is destructive and why?
-         - 
+         - git reset --hard is distructive because its permantly removes changes from 
+           both the staging area and working directory.
+      7- When would you use each one?
+         - --soft: 1- to rewrite commit message
+                   2- to squash multipla commit into one
+         - --mixed:1- to modify file before recommiting
+                   2- most commonly used reset mode
+         - --hard: 1- to discard unwanted local work completely
+                   2- to return the repository to a clean state
+      8- Should you ever use git reset on commits that are already pushed?
+         - Generally NO. - git reset rewrites commit history
+         - If other developers have pulled those commits, resetting and force-pushing can create conflicts and confusion.
+         - For pushed/shared commits: git revert <commit id>
+         - because it preserve the history and safe for collaboration.
+
+## Task 2: Git Revert — Hands-On:
+
+       1- Make 3 commits (commit X, Y, Z)
+          - vim file.txt (commit X)
+          - git add .
+          - git commit -m "added X"
+          -vim file.txt (commit Y)
+          - git add .
+          - git commit -m "added Y"
+          - vim file.txt (commit Z)
+          - git add .
+          - git commit -m "added Z"
+          - git log --oneline
+       2- Revert commit Y (the middle one) — what happens?
+         - git revert <2nd commit id>
+         - git log --oneline
+         OUTPUT:
+       3- Check git log — is commit Y still in the history?
+          - YES
+          - git log --oneline
+          OUTPUT:
+       4- How is git revert different from git reset?
+          git revert: - create a new history that undoes new changes.
+                      - keep history intact
+          git reset:  - move branch pointer backward
+                      - can removes the commit from history 
+        5- Why is revert considered safer than reset for shared branches?
+           - Because no history is rewritten
+        6- When would you use revert vs reset?
+           - Use revert: - shared branche
+                         - push commits
+                         - team project
+           - Use reset: - local branches
+                        - before pushing
+                        - cleaning commit history
+           

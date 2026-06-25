@@ -130,7 +130,68 @@
          - regural merge: When preserving commit history matters.
        8- What is the trade-off of squashing?
          - Individual commit history is lost.
-         
-              
 
-   
+## Task 4: Git Stash — Hands-On:
+       1- Start making changes to a file but do not commit
+       2- Now imagine you need to urgently switch to another branch — try switching. What happens?   
+          - git checkout feature-dashborad
+          (Sometimes Git blocks switching due to uncommitted changes.)
+       3- Use git stash to save your work-in-progress   
+          - git squash (Save work)
+       4- Switch to another branch, do some work, switch back
+          - git checkout feature-login(switch branch)
+          - git checkout main (return into main)
+       5- Apply your stashed changes using git stash pop
+          - git stash pop
+       6- Try stashing multiple times and list all stashes
+          - git stash push -m "work-1"
+          - git stash push -m "work-2"  
+          - git stash list
+          OUTPUT:
+       7- Try applying a specific stash from the list
+          - git stash apply @{1}
+          OUTPUT:
+       8- What is the difference between git stash pop and git stash apply?
+          - git stash apply: applies stash and keeps it
+          - git stash pop: applies stash and removed it
+       9- When would you use stash in a real-world workflow?
+          - When you're working on one feature and suddenly need to 
+            fix an urgent bug without committing unfinished work.
+
+## Task 5: Cherry Picking:
+       1- Create a branch feature-hotfix, make 3 commits with different changes
+          - git checkout feature-hotfix
+          - git commit -m "fix: issue 1"
+          - git commit -m "fix: payment bug"
+          - git commit -m "fix: issue 3"
+          - git log --oneline
+       2- Switch to main
+          - git switch main
+       3- Cherry-pick only the second commit from feature-hotfix onto main
+          - git cherry-pick second commit id
+       4- Verify with git log that only that one commit was applied
+          - git log --oneline 
+       5- What does cherry-pick do?
+          - copies the specific commit from another branch and applies to the current branch.
+       6- When would you use cherry-pick in a real project?
+          - applying a hotfix to a production
+          - taking only one useful commit from another branch
+          - avoiding merging an entire branch
+        7- What can go wrong with cherry-picking?
+           - merged conflicts
+           - duplicate commits
+           - confusing history if overused
+
+## Commands to add to git-commands.md:
+        - git merge
+        - git merge --squash
+        - git rebase main
+        - git log --oneline 
+        - git stash
+        - git stash pop
+        - git stash apply
+        - git stash list
+        - git stash push -m "message"
+        - git cherry-pick <commit-hash>
+           
+          

@@ -72,4 +72,112 @@
            - Use reset: - local branches
                         - before pushing
                         - cleaning commit history
+
+## Task 3: Reset vs Revert — Summary:
+
+        	Feature                           git reset	           git revert
+       1- What it does?                      Moves head backward       Create undo commit
+       2- Removes commit from history?	       yes                    No
+       3- Safe for shared/pushed branches?	       No                    yes
+       4- When to use?                        Local cleanup            Undo shared commits
+
+## Task 4: Branching Strategies:
+     
+     ## GitFlow:  
+        1- How it works? -GitFlow uses separate branches for development, releases, and hotfixes.
+
+        2- A simple diagram or flow :
+
+           main                                  WORKFLOW
+            │                                       |
+            ├── develop                          feature
+            │    ├── feature/login                  |
+            │    ├── feature/payment             Develop
+            │    └── feature/profile                |
+            │                                     Realese
+            ├── release/v1.0                        | 
+            │                                      main
+            |── hotfix/login-bug
+
+         3- When/where it's used?
+            1- banking application
+            2- Enterprise software
+            3- Teams with realese schedule
+
+         4- Pros and cons:
+            pros: -Organise
+                  -support multiple realese
+                  -clear workflow
+            Cons: -many branches
+                  -complex for small team
+                  -slower delivery
+
+       
+       ## GithubFlow :        
+        1- How it works? - Everything starts from main.
+                         - Create branch → Make changes → PR → Merge to main.
+
+        2- A simple diagram or flow?
+               main                           WORKFLOW
+                │                                | 
+                ├── feature/login            feature branch
+                ├── feature/payment              |
+                |── feature/profile            Pull request
+                                                  |
+                                                main
+
+         3- When/where it's used?
+              1- SAAS companies
+              2- web application
+              3- continuos deployment
+
+         4- Pros and cons
+            Pros: - simple
+                  - easy to learn
+                  - fast release
+            cons: - not for long realese cycle
+                  - less structured
+
+       ## Trunk-Based Development:
+          1- How it works? - Everyone directly work on main.
+
+          2- A simple diagram or flow?
+                 main                     WORKFLOW
+                  │                          |
+                  ├── small feature        Code 
+                  ├── bug fix                |
+                  └── merge quickly      short live branch
+                                             |
+                                           main
+           3- When/where it's used?
+                 1- DevOps team
+                 2- CI/CD environment
+                 3- google style deployment
+
+           4- Pros and cons:
+              Pros: - fast delivery
+                    - fewer merge conflicts
+                    - continuos intigration
+              Cons: - required strong testing
+                    -  can breack if main is not careful
+
+         5- Which strategy would you use for a startup shipping fast?
+            -Github application & Trunk- based deployment
+            - Reasons: -fast releases
+                       -simple workflow
+                       -works well with CI/CD
+         6- Which strategy would you use for a large team with scheduled releases?
+           -Git flow 
+           -Reasons: -Dedicated release branches
+                     -Dedicated hotfix branches
+                     -Better release management
+         7- Which one does your favorite open-source project use? (check any repo on GitHub)
+             
+                 
+            
+                    
+           
+        
+
+                        
            

@@ -172,6 +172,7 @@
                      -Dedicated hotfix branches
                      -Better release management
          7- Which one does your favorite open-source project use? (check any repo on GitHub)
+             My favorite open-source                 project is Kubernetes. I                checked its GitHub                     repository and found that it mainly uses Go as the programming language. It also uses YAML files for configuration and Git/GitHub for version control. Kubernetes helps in automating deployment and scaling of containerized applications. I like this project because it is widely used in DevOps and cloud environments.
              
                  
             

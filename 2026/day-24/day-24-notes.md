@@ -170,7 +170,7 @@
        3- Cherry-pick only the second commit from feature-hotfix onto main
           - git cherry-pick second commit id
        4- Verify with git log that only that one commit was applied
-          - git log --oneline 
+          - git log --oneline --graph --all
        5- What does cherry-pick do?
           - copies the specific commit from another branch and applies to the current branch.
        6- When would you use cherry-pick in a real project?

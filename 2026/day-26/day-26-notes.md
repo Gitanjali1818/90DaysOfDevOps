@@ -19,5 +19,20 @@
                3-GitHub enterprises authentication
 
 ## Task 2: Working with Repositories:
-     
+          1- Create a new GitHub repo directly from the terminal — make it public with a README
+             - gh repo create day-26-gh-demo --public --clone --add-readme
+          2- Clone a repo using gh instead of git clone
+             - gh repo clone day-26-gh-demo
+          3- View details of one of your repos from the terminal
+             - gh repo view
+          4- List all your repositories
+            - gh repo list
+          5- Open a repo in your browser directly from the terminal
+            - gh repo view --web
+          6- Delete the test repo you created 
+            - gh repo delete day-26-gh-demo --yes
+
+## Task 3: Issues
+          1- Create an issue on one of your repos from the terminal — give it a title, body, and a label
+            
                

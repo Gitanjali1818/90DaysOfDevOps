@@ -172,7 +172,48 @@
                      -Dedicated hotfix branches
                      -Better release management
          7- Which one does your favorite open-source project use? (check any repo on GitHub)
-             My favorite open-source                 project is Kubernetes. I                checked its GitHub                     repository and found that it mainly uses Go as the programming language. It also uses YAML files for configuration and Git/GitHub for version control. Kubernetes helps in automating deployment and scaling of containerized applications. I like this project because it is widely used in DevOps and cloud environments.
+             My favorite open-source project is Kubernetes. I checked its GitHub repository and found that it mainly uses 
+             Go as the programming language. It also uses YAML files for configuration and Git/GitHub for version control. 
+             Kubernetes helps in automating deployment and scaling of containerized applications. 
+             I like this project because it is widely used in DevOps and cloud environments.
+
+## Task 5: Git Commands Reference Update:
+
+        1- Setup & Config:
+           1- git config --global user.name gitanjali
+           2- git config --global user.email gitanjali8@gmail.com
+           3- git init
+        2- Basic Workflow (add, commit, status, log, diff)
+           1- git status
+           2- git add .
+           3- git commit -m "msg"
+           4- git log 
+           5- git diff
+        3- Branching (branch, checkout, switch)
+           1- git branch
+           2- git checkout -b feature-login
+           3- git switch main
+        4- Remote (push, pull, fetch, clone, fork)
+           1- git clona <url>
+           2- git remote -v
+           3- git fetch
+           4- git pull
+           5- git push
+        5- Merging & Rebasing
+           1- git merge feature-login
+           2- git rebase main
+        6- Stash & Cherry Pick
+           1- git stash
+           2- git stash pop
+           3- git cherry-pick <commit id>
+        7- Reset & Revert
+           1- git reset --soft HEAD~1
+           2- git reset --mixed HEAD~1
+           3- git reset --hard HEAD~1
+           4- git revert <commit id>
+           5- git reflog : Even after a hard reset, you can often recover commits using reflog.
+           
+
              
                  
             

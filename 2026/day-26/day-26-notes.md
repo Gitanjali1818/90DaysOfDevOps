@@ -77,5 +77,54 @@
 
 ## Task 5: GitHub Actions & Workflows (Preview):
           1- List the workflow runs on any public repo that uses GitHub Actions
+             - gh run list --repo cli/cli
+             OUTPUT:
+          2- View the status of a specific workflow run
+            - gh run view <run id> --repo cli/cli
+            OUTPUT:
+          3- How could gh run and gh workflow be useful in a CI/CD pipeline?  
+             1- monitor workflow exicution without opening github
+             2- check whether builts or deployments completed successfully
+             3- view logs when workflow is fails
+             4- re-run failed workflow exicution
+             5- trigger workflows from the terminal
+
+
+## Task 6: Useful gh Tricks:
+           1- gh api user: GitHub account information in JSON format.
+                                    output:
+           2- gh gist: - echo "GitHub CLI Practice" > notes.txt : Creating a Gist from the terminal is quick and useful when sharing notes
+                       - gh gist create notes.txt
+           3- gh release: -gh release create v1.0.0: The command asked for release details because my repository didn't have a release yet. 
+           4- gh alias: - gh alias set prs "pr status": Aliases help save time when using the same commands repeatedly.
+                        - gh prs 
+           5- gh search repos: gh search repos docker: I searched for Docker repositories.
+
+## Commands Added to git-commands.md:
+                commands                               Description
+           1- gh auth login                     authentication guthub cli
+           2- gh repo clone                     clone repo
+           3- gh repo create                    create repo
+           4- gh issue create                   creats issue
+           5- gh issue list                     view list
+           6- gh issue view                     view issue
+           7- gh issue close                    close issue
+           8- gh pr create                      create pull request
+           9- gh pr view                        view pull request
+           10- gh pr list                       list pull request
+           11- gh pr merge                      merge pull request 
+           12- gh run list                      list workfloe run
+           13- gh run view                      view workflow run
+           14- gh workflow list                 list workflows
+           15- gh api                           call Github REST API
+           16- gh gist create                   create Github Gist
+           17- gh release create                create release 
+           18- gh alies set                     create command aliases
+           19- gh search repos                  search GitHub repositories
+
+           
+                        
+
+             
              
             

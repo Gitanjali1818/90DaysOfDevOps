@@ -93,12 +93,16 @@
 ## Task 6: Useful gh Tricks:
            1- gh api user: GitHub account information in JSON format.
                                     output:
-           2- gh gist: - echo "GitHub CLI Practice" > notes.txt : Creating a Gist from the terminal is quick and useful when sharing notes
+           2- gh gist: - echo "GitHub CLI Practice" > notes.txt 
+                       - Creating a Gist from the terminal is quick and useful when sharing notes
                        - gh gist create notes.txt
-           3- gh release: -gh release create v1.0.0: The command asked for release details because my repository didn't have a release yet. 
-           4- gh alias: - gh alias set prs "pr status": Aliases help save time when using the same commands repeatedly.
+           3- gh release: -gh release create v1.0.0 
+                          -The command asked for release details because my repository didn't have a release yet. 
+           4- gh alias: - gh alias set prs "pr status"
+                        - Aliases help save time when using the same commands repeatedly.
                         - gh prs 
-           5- gh search repos: gh search repos docker: I searched for Docker repositories.
+           5- gh search repos: -gh search repos docker
+                              -I searched for Docker repositories.
 
 ## Commands Added to git-commands.md:
                 commands                               Description

@@ -51,9 +51,102 @@
             - git push origin main
 
 ## Task 3: Organize Your Repositories:
-          1- 
-      
-               
-    
-             
+          1- 90 Days of DevOps:
+             1- Clear README explaining what the challenge is
+                Repo name: 90DaysOfDevOps
+                   Daily task and practical exercises completed during the challenge.
+             2- Organized folder structure by day
+                 ## Folder structed:
+                     2026
+                     |____day-01
+                     |____day-02
+                     |____-----
+          2- Shell Scripts — a dedicated repo for all your shell scripting work 
+             1- Move/copy your scripts from Days 16–21 here
+                -mkdir shell-scripts
+                -cp ../90-days-of-devops/2026/day-16/*.sh .
+                -cp ../90-days-of-devops/2026/day-17/*.sh .
+                -cp ../90-days-of-devops/2026/day-18/*.sh .
+                   and so on..... upto 21 day
+              2- Add a README listing what each script does
+                # shell scripts
+                  collection of shell scripting practice
+                  ##scripts:
+                    -
+          3- Python Scripts — a dedicated repo for your Python projects
+             1- Move/copy your scripts from Days 7–15 here
+                -Repo name: python script
+                -mkdit python-script
+                -cp ../90-days-of-devops/2026/day-07/*.py .
+                -cp ../90-days-of-devops/2026/day-08/*.py .
+                -cp ../90-days-of-devops/2026/day-09/*.py .
+                 and so on.... upto 15 day
+             2- Add a README listing what each script does
+                ##python scripts:
+                   practice programs written while learning programs.
+                ##Topics:
+                   -variable
+                   -loop
+                   -function
+                   -file handling
+            4- DevOps Notes — a repo for your learning notes, cheat sheets, and references
+               1- Add your shell scripting cheat sheet
+                  -Repo name: Devops notes
+                  -mkdir linux shell git python   
+                  -cp shell-cheatsheet.md Shell/
+               2- Add your git-commands.md
+                 - cp git-commands.md git/
+               3- Organize by topic (Linux, Git, Python, etc.)
+                 - yes. In above question it is achieve.
+               4- A proper README.md explaining what's inside
+                   ##README
+                     notes collected during the practice.
+                     ##Topic:
+                      -linux
+                      -shell-script
+                      -git
+                      -python
+               5- A relevant .gitignore
+                  -touch gitignore
+                  (.env,*.log,*.pyc)
+               6- git add .
+                  -git commit -m "orgnise the repo"
+                  -git push origin main
+
+## Task 4: Pin Your Best Repos:
+          1- Go to your GitHub profile and select 4 pinned repositories
+             ## 90-days-of-devops
+               1-shell-script
+               2-python
+               3-linux practice
+               4-devops notes
+           2- Choose repos that best represent your work and learning
+           3- Make sure each pinned repo has a description and README
+
+## Task 5: Clean Up:
+          1- Delete or archive repos that are empty, abandoned, or irrelevant
+          2- Rename any repos with unclear names
+          3- Make sure you're not exposing any secrets
+          ##usefull commands:
+            -git status
+            -git log
+            -git ls-files
+            -git remote -v
+
+## Task 6 – Before & After:
+       1- Take a screenshot of your GitHub profile before you started today
+       2- Take a screenshot after all your changes
+       3- Add both to your day-27-notes.md
+       4- Write 3 things you improved and why
         
+            
+
+           
+
+           
+               
+               
+
+
+
+    

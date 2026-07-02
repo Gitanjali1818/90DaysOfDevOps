@@ -8,14 +8,15 @@
    4- if-else condition
 
 ## Task 1: Your First Script:
-   1- Create a file hello.sh & Print Hello, DevOps! using echo.Make it executable and run it.
-     Bash command: vim hello.sh
-     Script:    #!/bin/bash
+   1- Create a file hello.sh & Print Hello, DevOps! using echo.
+      Make it executable and run it.
+      Bash command: vim hello.sh
+      Script:    #!/bin/bash
                   echo "hello, Devops!"
-     Bash command: chmod +X hello.sh
+      Bash command: chmod +X hello.sh
                    ./hello.sh
 
-     Output: hello,devops!            
+      Output: hello,devops!            
 
     2-  What happens if you remove the shebang line?
         1- Without shebang the system decides which shell to use.

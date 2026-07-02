@@ -9,7 +9,7 @@
          #function call
 
          greet() {
-           echo "Hello, $1
+           echo "Hello, $1"
            }
            add () {
             sum=(( $1 + $2))

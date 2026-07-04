@@ -101,6 +101,29 @@
      2- set -e: Exit immediately if any command returns a non-zero status.
      3- set -o pipefail: Pipeline returns failure if any command inside it fails.
 
+     ##Edited Script:
+        #!/bin/bash
+
+         set -euo pipefail
+
+         NAME="Gitanjali"
+
+         echo "Testing set -u"
+         echo "$NAME"
+
+        echo "Testing set -e"
+        rm -rf test
+        mkdir test
+        echo "created dir successfully"
+
+        false
+
+        echo
+        echo "Testing pipefails"
+        cat file.txt | grep "abc"
+        echo "This line will not execute"
+      
+
 
 ## Task 4: Local Variables:
     vim local_demo.sh
@@ -118,11 +141,11 @@
            echo "$text"
            }
 
-           show_local
+           show_local () {
 
            echo "Outside functions"
            echo "${message:- variable not accesible}"
-
+           }
            echo
 
            show_global
@@ -130,14 +153,15 @@
            echo "$text"
 
 
-    OUTPUT:
-          Inside Function
-          Outside function:
-          Variable not accessible
+    OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-18$ ./local_demo.sh
+            Inside function
+            outside function
+            variable not accesible
 
-         Global Variable
-         Outside function:
-         Global Variable
+            Global variable
+            Outside functions
+            Global variable
+          
 
 
 

@@ -2,7 +2,7 @@
 
 
 ## Task 1: Basic Functions:
-    vim functions.sh
+   1- vim functions.sh
         #!/bin/bash
          #function to greet user
          #function to add two numbers
@@ -12,16 +12,20 @@
            echo "Hello, $1"
            }
            add () {
-            sum=(( $1 + $2))
+            sum=($1+$2)
              echo "sum = $sum"
              }
              greet Geet
               add 10 20
-     OUTPUT:
+       2- chmod 775 function.sh
+       3- ./functions.sh
+     OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-18$ ./functions.sh
+                                                hello, Geet
+                                                sum = 10+20
 
 
 ## Task 2: Functions with Return Values:
-    vim disk_check.sh 
+   1- vim disk_check.sh 
        #!/bin/bash
        check_disk() {
           echo "=======DISK USAGE======="
@@ -37,14 +41,24 @@
          check_disk
          echo 
          check_memory
+    2- chmod 755 disk_check.sh
+    3- ./disk_check.sh
 
-    OUTPUT:
+    OUTPUT:  ubuntu@ip-172-31-44-56:~/2026/day-18$ ./disk_check.sh
+                        =======DISK USAGE======
+             Filesystem      Size  Used Avail Use% Mounted on
+                       /dev/root       6.7G  3.0G  3.7G  46% /
 
+                        ====CHECK MEMORY=====
+                     total        used        free      shared  buff/cache   available
+      Mem:           908Mi       380Mi       141Mi       2.8Mi       517Mi       528Mi
+      Swap:             0B          0B          0B
+      
 ## Task 3: Strict Mode — set -euo pipefail
       vim strict_demo.sh
          #!/bin/bash
 
-         set -euo pipeline 
+         set -euo pipefail 
 
          echo "Testing set -u"
          echo "$NAME"
@@ -58,11 +72,20 @@
 
 
      ## What Happens? ##
-     1- set -u : Undefined variable causes error.
-       OUTPUT:
+     1-OUTPUT: Testing set -u
+              ./strict_demo.sh: line 6: NAME: unbound variable
+              1-after define a name variable,
+              OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-18$ ./strict_demo.sh
+                      Testing set -u
+                      Gitanjali
+                      Testing set -e        
 
      2- set -e : Script exits immediately when a command fails.
-       OUTPUT:
+       OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-18$ ./strict_demo.sh
+               Testing set -u
+               Gitanjali
+               Testing set -e
+               mkdir: test: File exists
 
      3- set -o pipefail : If cat file.txt fails, the pipeline may still succeed.
                           With pipefail, failure of any command in pipeline causes entire pipeline to fail. 

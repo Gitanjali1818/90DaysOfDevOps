@@ -86,6 +86,12 @@
                Gitanjali
                Testing set -e
                mkdir: test: File exists
+            1- after adding rm -rf test command.
+            OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-18$ ./strict_demo.sh
+                    Testing set -u
+                    Gitanjali
+                    Testing set -e
+                    created dir successfully
 
      3- set -o pipefail : If cat file.txt fails, the pipeline may still succeed.
                           With pipefail, failure of any command in pipeline causes entire pipeline to fail. 

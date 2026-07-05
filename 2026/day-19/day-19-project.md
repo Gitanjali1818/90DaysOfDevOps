@@ -48,13 +48,13 @@
             DEST_DIR="$2"
             
       #Verify source directory
-           if [ ! -d "SOURCE_DIR" ]; then
+           if [ ! -d "$SOURCE_DIR" ]; then
               echo "Error: Source directory does not exist."
               exit 1
            fi
 
        #Create destination if missing
-            mkdir -p "DEST_DIR"
+            mkdir -p "$DEST_DIR"
 
             TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
             ARCHIVE_NAME="backup-$TIMESTAMP.tar.gz"
@@ -77,20 +77,27 @@
            find "$DEST_DIR" -type f -name "backup-*.tar.gz" -mtime +14 -delete
 
     3- chmod +x backup.sh
-        ./backup.sh /home/ubuntu/data /home/ubuntu/backups    
+        ./backup.sh /home/ubuntu/devops /home/ubuntu/backups  
+
+    4- OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-19$ ./backup.sh /home/ubuntu/devops /home/ubuntu/backups
+               tar: Removing leading `/' from member names
+               backup created successfully
+               archive: backup-2026-07-05-15-38-48.tar.gz
+               size: 4.0K    
 
 
 ## Task 3: Crontab:
 
         1- Check current schedules
             crontab -l
+          OUTPUT: no crontab for ubuntu  
 
         2- Run log_rotate.sh daily at 2 AM
             0 2 * * * /home/ubuntu/2026/day-19/log_rotate.sh /var/log/myapp  
 
         3- Run backup.sh every Sunday at 3 AM
              0 3 * * 0 /home/ubuntu/2026/day-19/backup.sh /home/ubuntu/data /home/ubuntu/backups
-
+ 5
         4- Run health check every 5 minutes
               */5 * * * * /home/ubuntu/2026/day-19/health_check.sh
 

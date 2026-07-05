@@ -2,21 +2,21 @@
 
 
 ## Task 1: Basic Functions:
-   1- vim functions.sh
-        #!/bin/bash
-         #function to greet user
-         #function to add two numbers
-         #function call
+        1- vim functions.sh
+            #!/bin/bash
+            #function to greet user
+            #function to add two numbers
+            #function call
 
-         greet() {
-           echo "Hello, $1"
-           }
-           add () {
-            sum=($1+$2)
-             echo "sum = $sum"
-             }
-             greet Geet
-              add 10 20
+            greet() {
+              echo "Hello, $1"
+              }
+             add () {
+             sum=($1+$2)
+              echo "sum = $sum"
+               }
+               greet Geet
+               add 10 20
        2- chmod 775 function.sh
        3- ./functions.sh
      OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-18$ ./functions.sh
@@ -25,12 +25,12 @@
 
 
 ## Task 2: Functions with Return Values:
-   1- vim disk_check.sh 
-       #!/bin/bash
-       check_disk() {
-          echo "=======DISK USAGE======="
-            df -h /
-            }
+          1- vim disk_check.sh 
+              #!/bin/bash
+              check_disk() {
+              echo "=======DISK USAGE======="
+                    df -h /
+                }
 
        check_memory() {
           echo "========CHECK MEMORY======="

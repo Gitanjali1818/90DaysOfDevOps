@@ -201,25 +201,53 @@
            free -h
            }
 
+       #CPU PROcesses
+         cpu_processes() {
+         echo
+         echo "=====CPU PROCESSES====="
+         ps aux --sort%=-cpu | head
+         }
+
        #Top 5 CPU processes
          main () {
            system_info
            show_uptime
            disk_usage
            memory_usage
-           cpu_processes
-
            }
            main
+     OUTPUT:                      =====CPU PROCESSES=====
+             USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+             root           3  0.0  0.0      0     0 ?        S    Jul01   0:00 [pool_workqueue_release]
+             root           4  0.0  0.0      0     0 ?        I<   Jul01   0:00 [kworker/R-rcu_gp]
+             root           5  0.0  0.0      0     0 ?        I<   Jul01   0:00 [kworker/R-sync_wq]
+             root           6  0.0  0.0      0     0 ?        I<   Jul01   0:00 [kworker/R-kvfree_rcu_reclaim]
+             root           7  0.0  0.0      0     0 ?        I<   Jul01   0:00 [kworker/R-slub_flushwq]
+             root           8  0.0  0.0      0     0 ?        I<   Jul01   0:00 [kworker/R-netns]
+             root          10  0.0  0.0      0     0 ?        I<   Jul01   0:00 [kworker/0:0H-kblockd]
+             root          13  0.0  0.0      0     0 ?        I<   Jul01   0:00 [kworker/R-mm_percpu_wq]
+             root          16  0.0  0.0      0     0 ?        S    Jul01   0:00 [rcu_exp_par_gp_kthread_worker/0]
+                                ======SYSTEM INFO=====
+             hostname : ip-172-31-44-56
+                 tr: missing operand
+                Try 'tr --help' for more information.
+                OS :
 
+                          ====UPTIME====
+                up 3 days, 21 hours, 44 minutes
 
-OUTPUT:
+                 =====TOP 5 FILE SYSTEM USAGE====
+         Filesystem       Size  Used Avail Use% Mounted on
+        /dev/root        6.7G  3.0G  3.7G  46% /
+        tmpfs            455M     0  455M   0% /dev/shm
+        tmpfs            182M  948K  181M   1% /run
+        efivarfs         128K  3.3K  120K   3% /sys/firmware/efi/efivars
+        tmpfs            455M     0  455M   0% /tmp
 
-
-
-
-
-
+                  =====MEMORY USAGE=====
+               total        used        free      shared  buff/cache   available
+               Mem:           908Mi       375Mi       182Mi       2.8Mi       481Mi       533Mi
+               Swap:             0B          0B          0B
 
 
 ## What i learned:

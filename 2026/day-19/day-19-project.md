@@ -104,13 +104,15 @@
 
 ## Task 4: Combined Scheduled Maintenance Script:
 
-    1- vim maintance.sh
+    1- sudo mkdir -p /var/log/myspp
+       vim maintance.sh
+       
         
     2-  #!/bin/bash
 
           set -euo pipefail
 
-          LOG_FILE="var/log/maintance.log"
+          LOG_FILE="/var/log/maintance.log"
 
           log_message() {
             echo "$(date '+%Y-%m-%d %H:%M:%S') : $1" >> "$LOG_FILE"
@@ -119,7 +121,7 @@
          log_message "maintance_started"
 
       #log roration
-        if ./log_rotate.sh /var/log/myapp >> "$LOG_FILE" 2>$1 then;
+        if ./log_rotate.sh /var/log/myapp >> "$LOG_FILE" 2>&1; then
 
            log_message "log rotation complete"
         else
@@ -127,7 +129,7 @@
         fi
 
      #backup
-       if ./back.sh /home/ubuntu/data /home/ubuntu/backups >> "$LOG_FILE" 2>$1 then;
+       if ./backup.sh /home/ubuntu/devops /home/ubuntu/backups >> "$LOG_FILE" 2>&1; then
         log_message "backup complete"
        else
          log_message "backup failed"
@@ -135,33 +137,47 @@
 
         log_message "maintance finished"
 
-     3- chmod +x maintenance.sh
+     3- chmod 755 maintenance.sh
 
      4- Cron entry for maintenance script (Daily at 1 AM)
         0 1 * * * /home/ubuntu/2026/day-19/maintenance.sh
 
 
     OUTPUT:
-      1- Log rotation
-          Compressed files : 5
-          Deleted files    : 2
+      1- Log rotation:
+          Compressed files : 0
+          Deleted files    : 0
 
-       2- Backup
-          Backup created successfully.
-          Archive : backup-2026-06-11-11-30-15.tar.gz
-          Size    : 18M
+       2- Backup:
+          backup created successfully
+          archive: backup-2026-07-05-19-22-22.tar.gz
+          size: 4.0K
 
       3- Maintenance Log
-         2026-06-11 01:00:01 : Maintenance started
-         Compressed files : 5
-         Deleted files : 2
-         2026-06-11 01:00:10 : Log rotation completed
-         Backup created successfully.
-         Archive : backup-2026-06-11-01-00-10.tar.gz
-         Size : 18M
-         2026-06-11 01:00:12 : Backup completed
-         2026-06-11 01:00:12 : Maintenance finished
-
+                OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-19$ sudo cat /var/log/maintance.log
+                        2026-07-05 19:15:45:maintance_started
+                        2026-07-05 19:18:03:maintance_started
+                        2026-07-05 19:22:22 : maintance_started
+                        find: ‘/var/log/myapp’: No such file or directory
+                        2026-07-05 19:22:22 : log rotation failed
+                        tar: Removing leading `/' from member names
+                        backup created successfully
+                        archive: backup-2026-07-05-19-22-22.tar.gz
+                        size: 4.0K
+                        2026-07-05 19:22:22 : backup complete
+                        2026-07-05 19:22:22 : maintance finished
+                        2026-07-05 19:22:43 : maintance_started
+                        find: ‘/var/log/myapp’: No such file or directory
+                        2026-07-05 19:22:43 : log rotation failed
+                        tar: Removing leading `/' from member names
+                        backup created successfully
+                        archive: backup-2026-07-05-19-22-43.tar.gz
+                        size: 4.0K
+                        2026-07-05 19:22:43 : backup complete
+                        2026-07-05 19:22:43 : maintance finished
+                        2026-07-05 19:34:07 : maintance_started
+                        Compressed files : 0
+                        Deleted files    : 0
 
 
 ## Documentation:

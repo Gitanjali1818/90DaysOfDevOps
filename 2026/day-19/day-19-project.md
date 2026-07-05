@@ -7,9 +7,11 @@
 
      # Check argument
         if [ $# -ne 1 ]; then
-           echo "Usage: $0 <log_directory>
+           echo "Usage: $0 <log_directory>"
            exit 1
         fi   
+
+        LOG_DIR="$1"
 
       # Count .log files older than 7 days  
           compressed_count=$(find "$LOG_DIR" -type f -name "*.log" -mtime +7 | wc -l)
@@ -27,8 +29,11 @@
          echo "Deleted files    : $deleted_count"
 
      3- chmod +x log_rotate.sh
-        ./log_rotate.sh /var/log/myapp   
-
+        sudo ./log_rotate.sh /var/log   
+     
+     4- OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-19$ sudo ./log_rotate.sh /var/log
+                Compressed files : 3
+                Deleted files    : 22
 
 ## Task 2: Server Backup Script:
       1- vim backup.sh

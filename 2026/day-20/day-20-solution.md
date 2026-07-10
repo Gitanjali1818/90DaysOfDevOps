@@ -31,7 +31,27 @@
              -grep -c counts the no. of lines containing the word ERROR.
           2- Count the total number of lines containing the keyword ERROR or Failed
 
+## Task 3: Critical Events:
+          1- Search for lines containing the keyword CRITICAL
+             -grep -c "CRITICAL" "$LOGFILE"
+          2- Print those lines along with their line number
 
+## Task 4: Top Error Messages:
+         1- Extract all lines containing ERROR
+            - grep -c "ERROR" "$LOGFILE"
+         2- Identify the top 5 most common error messages
+           - grep "ERROR" "$LOGFILE" |awk '{$1=$2=$3=; print}' | sort | uniq -c | sort -rn | head -5
+           -Explantion:
+             - grep- select only ERROR lines
+             - awk- Removes the data time and log level
+             - sort- sorts the message alphabetically
+             - uniq -c- counts how many times each message appears
+             - sort -rn- sorts by count
+             - head -5- shows the only top 5
+            -OUTPUT:
+          3- Display them with their occurrence count, sorted in descending order
+            - 
+            
 
           
 ## 1. log_analyzer.sh:

@@ -1,5 +1,39 @@
-## Day 20 – Bash Scripting Challenge: Log Analyzer and Report Generator
+## Day 20 – Bash Scripting Challenge: Log Analyzer and Report Generator:
 
+## Task 1: Input and Validation:
+        1- Accept the path to a log file as a command-line argument.
+           - LOGFILE=$1
+           - ./log_analyzer.sh sample_log.log
+           - sample_log.log (it is the input)
+           - first argument: $1 = sample_log.log
+           - #!/bin/bash
+             LOG_FILE=$1
+         2- Exit with a clear error message if no argument is provided.
+           - if [ $# -eq 0]; then
+             echo "Error: no log file provided."
+             echo "usage: ./log_analyzer.sh <log_file>"
+             exit 1
+             fi
+            -Explanation: 
+             1- $# gives the nu. of command line arguments
+             2- If no argument is orivided, orint an error message and exit the script.
+         3- Exit withCount the total number of lines containing the keyword ERROR or Failed a clear error message if the file doesn't exist
+            -if [ ! -f "$LOGFILE"]; then
+             echo "Error: FILE '$LOGFILE' does not exist."
+             exit 1
+             fi
+            - Explanation: -f checks whether the file exists and is a regular file.
+
+
+## Task 2: Error Count:
+          1- Print the total error count to the console
+             -grep -c "ERROR" "$LOGFILE"
+             -grep -c counts the no. of lines containing the word ERROR.
+          2- Count the total number of lines containing the keyword ERROR or Failed
+
+
+
+          
 ## 1. log_analyzer.sh:
     1- vim log_analyzer.sh
     2- #!/bin/bash

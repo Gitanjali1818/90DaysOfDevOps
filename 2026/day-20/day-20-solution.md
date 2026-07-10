@@ -50,8 +50,8 @@
              - head -5- shows the only top 5
             -OUTPUT:
           3- Display them with their occurrence count, sorted in descending order
-            - 
-            
+            - grep "ERROR" "$LOGFILE" | awk '{$1=$2=$3="";print}' | sort |uniq -c | sort -rn
+            -OUTPUT: 
 
           
 ## 1. log_analyzer.sh:

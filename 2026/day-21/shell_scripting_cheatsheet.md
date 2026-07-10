@@ -100,56 +100,98 @@
 ## Task 3: Loops:
        1- for loop: 
            1- List-based
+             do 
              for i in 1 2 3
                echo "$i"
              done
+           ## OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ ./for_loop.sh
+                      1
+                      2
+                      3  
            2- C-Style
-             for ((i=1;i<=5:i++))
+             for ((i=1;i<=5;i++))
               do
                echo "$i"
              done
+            ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ ./for_loop.sh
+                      1
+                      2
+                      3
+                      4
+                      5
              
        2- while loop:
           count=1
            while [ $count -le 5 ]
            do 
-              echo $count
+              echo "$count"
               ((count++))
            done
+         ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ ./while_loop.sh
+                   1
+                   2
+                   3
+                   4
+                   5  
 
-      3- Untill loop:
+      3- Until loop:
          count=1
-          untill [ $count -ge 5 ]
+          until [ $count -ge 5 ]
           do
-             echo $count
+             echo "$count"
              ((count++))
           done
+        ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ ./untill_loop.sh
+                  1
+                  2
+                  3
+                  4  
+          
 
       4- Loop control:
            1- Break
              for i in {1..10}
              do 
                  [ $i -eq 5 ] && break
-                 echo $i
-             done 
+                 echo "$i"
+             done
+            ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ ./loop_control.sh
+                      1
+                      2
+                      3
+                      4 
            2- Continue:
               for i {1..5}
               do
-                 [ $i -eq 3 ] && continue
+                 [ $i -eq 5 ] && continue
                  echo $i
               done
+            ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ ./loop_control.sh
+                      1
+                      2
+                      3
+                      4
+                      1
+                      2
+                      3
+                      4  
 
        5- Looping over files:
            for file in *.log
            do
              echo $file
            done
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20/task-3$ ./looping_over_files.sh
+                    *.log 
 
        6- Looping over command output:
             cat names.txt | while read line
             do
-               echo &line
+               echo $line
             done
+
+            ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20/task-3$ ./loopintg_over_command.sh
+                       cat: names.txt: No such file or directory
 
 ## Task 4: Functions:
        1- Defining a function:

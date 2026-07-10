@@ -6,7 +6,7 @@
       
       Variable	     VAR="value"      	           NAME="DevOps"
       Argument	     $1, $2	                         ./script.sh arg1
-        If	            if [ condition ]; then	    if [ -f file ]; then
+        If	            if [ condition ]; then	           if [ -f file ]; then
       For loop	     for i in list; do	           for i in 1 2 3; do
       Function	     name() { ... }	                  greet() { echo "Hi"; }
        Grep	            grep pattern file	           grep -i "error" log.txt

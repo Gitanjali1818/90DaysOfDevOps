@@ -49,10 +49,25 @@
              - sort -rn- sorts by count
              - head -5- shows the only top 5
             -OUTPUT:
-          3- Display them with their occurrence count, sorted in descending order
+         3- Display them with their occurrence count, sorted in descending order
             - grep "ERROR" "$LOGFILE" | awk '{$1=$2=$3="";print}' | sort |uniq -c | sort -rn
             -OUTPUT: 
 
+
+## Task 5: Summary Report:
+          1- Generate a summary report to a text file named log_report_<date>.txt (e.g., 
+             log_report_2026-02-11.txt). The report should include:
+            - ./log_analyzer.sh sample_log.log
+            -OUTPUT:
+
+## Task 6 (Optional): Archive Processed Logs:
+         1- Create an archive/ directory if it doesn't exist
+            -mkdir -p archive
+         2- Move the processed log file into archive/ after analysis
+            -mv "$LOG_FILE" archive/
+         3- Print a confirmation message
+           -echo "Log file moved to archive successfully."
+        
           
 ## 1. log_analyzer.sh:
     1- vim log_analyzer.sh
@@ -158,6 +173,10 @@
      2- ./log_analyzer.sh sample_log.log
      3-  Sample output:
      4-  Generated Report (log_report_2026-07-29.txt
+
+## DOCUMENTATION:
+    
+     
          
      
              

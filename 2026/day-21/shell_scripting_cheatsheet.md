@@ -198,6 +198,9 @@
              greet() {
                 echo "Hello"
              }
+             greet
+       ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20/task-4$ ./defining_function.sh
+                 hello   
 
        2- Calling a function:
              greet

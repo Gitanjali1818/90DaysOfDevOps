@@ -210,51 +210,59 @@
                echo $(($1+$2))
                }
              sum 10 20
-
+         ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20/task-4$ ./passing_arguments.sh
+                   30
+                   
        4- Return values:
-            square() {
-              echo (($1*$1))
-              }
-               result=$(square 5)
-
-                Return code:
-                  return 0
-
-       5- Local variables:
-            greet() {
+            #!/bin/bash
+              square() {
+              echo $(($1 * $1))
+              } 
+              result=$(square 5)
+              echo "Square = $result"
+              exit 0
+       ##OUTPUT:ubuntu@ip-172-31-44-56:~/2026/day-20/task-4$ ./return_value.sh
+                Square = 25
+                
+    5- Local variables:
+         greet() {
               Local name="DevOps"
                echo $name
                }
+               greet
+           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20/task-4$ ./local_variable.sh
+                     Devops    
 
 ## Task 5: Text Processing Commands:
        1- grep:
-           -grep error file.log
-           -grep -i error file.log
+           -grep error warn_logs.log
+           -grep -i error warn_logs.log
            -grep -r error
-           -grep -c error file.log
-           -grep -n error file.log
-           -grep -v error file.lof
-           -grep -E "error|warning" file.log
+           -grep -c error warn_logs.log
+           -grep -n error warn_logs.log
+           -grep -v error warn_logs.log
+           -grep -E "error|warning" warn_logs.log
 
         2- awk:
-            -print columns: awk '{print $1}' file.txt
+            -print columns: awk '{print $1}' warn_logs.log
             -field separator: awk -F: '{print $1}' /etc/passwd
-            -patterns: awk "/error/ {print}' log.txt
-            -BEGIN/END: awk "BEGIN {print "start"} {print $1} END{print "done"}" file 
+            -patterns: awk '/error/ {print}' warn_logs.log
+            -BEGIN/END: awk 'BEGIN {print "start"} {print $1} END {print "done"}' warn_logs.log
 
         3- sed:
-            -substitution: sed "s/old/new/g' file.txt
-            -Delete lines: sed '3D' file.txt
-            -In-place edit: sed -i 's/foo/bar/g' file.txt
+            -substitution: sed 's/old/new/g' warn_logs.log
+            -Delete lines: sed '3d' warn_logs.log
+            -In-place edit: sed -i 's/foo/bar/g' warn_logs.log
 
         4- cut:
             -cut -d: -f1 /etc/passwd
 
         5- sort:
-            -alphabetical: sort file.txt
-            -numerical: sort-n file.txt
-            -reverse: sort -r file.txt
-            -unique: sort -u file.txt
+            -alphabetical: sort warn_logs.log
+            -numerical: sort-n warn_logs.log
+            -reverse: sort -r warn_logs.log
+            -unique: sort -u warn_logs.log
+            
 
          6- uniq:  
              -deduplicate: uniq file.txt

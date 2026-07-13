@@ -167,10 +167,10 @@
          - git checkout main
          - git merge --squash feature-profile
          - git commit -m "feat: add profile feature"
-         OUTPUT: after squash
+         ##OUTPUT: after squash
        3- Check git log — how many commits were added to main?
          - git log --oneline
-           OUTPUT: only one commit is added
+         ##OUTPUT: only one commit is added
        4- Now create another branch feature-settings, add a few commits
           - git checkout -b feature-setting
        5- Merge it into main without --squash (regular merge) — compare the history

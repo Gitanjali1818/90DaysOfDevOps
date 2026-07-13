@@ -32,7 +32,7 @@
 
       4- Create a new branch and switch to it in a single command — call it feature-2
           git checkout -b feature-2
-          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git checkout -b feature-2
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-23$ git checkout -b feature-2
                     Switched to a new branch 'feature-2' 
 
        5- Try using git switch to move between branches — how is it different from git checkout?

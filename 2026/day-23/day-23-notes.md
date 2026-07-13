@@ -21,16 +21,21 @@
 ## Task 2: Branching Commands — Hands-On:
    
      1- List all branches in your repo
-        git branch - 
+        git branch - ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git branch
+                     * master
 
      2- Create a new branch called feature-1
         git branch feature-1
 
      3- Switch to feature-1
         git switch feature-1
+        ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git switch feature-1
+                  Switched to branch 'feature-1'
 
       4- Create a new branch and switch to it in a single command — call it feature-2
           git checkout -b feature-2
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git checkout -b feature-2
+                    Switched to a new branch 'feature-2' 
 
        5- Try using git switch to move between branches — how is it different from git checkout?
                  git checkout                                 git switch
@@ -41,27 +46,37 @@
           1- Switch to feature-1: git switch feature-1
           2- Create a file: touch feature-1.txt
           3- stage & commit: git add feature-1
-                             git commit -m "added feature-1 file"
+                             git commit -m "added feature-1.txt"
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git commit -m "added feature-1.txt"
+                    [feature-1 ccf4950] added feature-1.txt
+                    1 file changed, 0 insertions(+), 0 deletions(-)
+                    create mode 100644 feature-1.txt                   
 
-       7- Switch back to main — verify that the commit from feature-1 is not there
-           1- swicth to main: git switch main
+       7- Switch back to master — verify that the commit from feature-1 is not there
+           1- swicth to master: git switch master
            2- check log: git log --oneline
+           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git log --oneline
+                     d793075 (HEAD -> master, feature-2) added git commands file
+                     6178da9 added more commands
+                     0fead7c added git commands
 
        8- Delete a branch you no longer need
            git branch -d feature-2
+           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git branch -d feature-2
+                     Deleted branch feature-2 (was d793075). 
 
 
 ## Task 3: Push to GitHub
    
        1- Create a new repository on GitHub (do NOT initialize it with a README)
-           git remote add origin (https://github.com/<username>/devops-git-practice.git)
+           git remote add origin (git@github.com:Gitanjali1818/devops-git-practice.git)
       
             2- Verify: git remote -v   
 
        2- Connect your local devops-git-practice repo to the GitHub remote
 
        3- Push your main branch to GitHub
-          git push origin main
+          git push origin master
 
        4- Push feature-1 branch to GitHub
            git push origin feature-1
@@ -108,7 +123,7 @@
 
         5- After forking, how do you keep your fork in sync with the original repo?
            1. Add original repository as upstream:
-              git remote add main <original-repository-url>
+              git remote add main git@github.com:Gitanjali1818/devops-git-practice.git
            2. Fetch updates:
               git fetch main
            3. Merge changes:

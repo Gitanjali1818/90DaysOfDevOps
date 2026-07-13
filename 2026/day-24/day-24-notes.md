@@ -53,14 +53,26 @@
           -git commit -m "doc: validated signup"
           
           ##Add a commit to main BEFORE merging
-           -git switch main
+           -git switch master
            -vim home.txt
              (added home page)
            -git add .
            -git commit -m "doc:added new changes"
            -git log --oneline
+           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git log --oneline
+                     725ea2d (HEAD -> master) doc: added new changes
+                     5774157 (feature-login) chore:added nginx run file
+                     d90541b feat: added nginx script
+                     32d53d2 fet: added first page
            -git merge feature-signup
-           ##OUTPUT:
+           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git log --oneline
+                     2b34c17 (HEAD -> master) Merge branch 'feature-signup'
+                     725ea2d doc: added new changes
+                     b76d68c (feature-signup) doc: validated signup
+                     77427fc doc:update signup
+                     5774157 (feature-login) chore:added nginx run file
+                     d90541b feat: added nginx script
+                     32d53d2 fet: added first page
         
         6- What is a fast-forward merge?
            -Main has no new changes, so Git just moves the branch pointer forward.
@@ -78,8 +90,8 @@
 
 ## Task 2: Git Rebase — Hands-On:
 
-       1- Create a branch feature-dashboard from main, add 2-3 commits 
-          -git chechkout main
+       1- Create a branch feature-dashboard from master, add 2-3 commits 
+          -git checkout master
           -git checkout -b feature-dashboard
           -vim dashboard.txt
            (create dashboard UI)
@@ -90,14 +102,40 @@
           -git add .
           -git commit -m "feat: added dashboard API"
        2- While on main, add a new commit (so main moves ahead) 
-          -git checkout main
+          -git checkout master
           -vim README.md
             (this is the project info)
           -git add .
           -git commit -m "docs:update the project info"
-          -git checkout main
-          -git rebase main
           -git log --oneline
+          ##output: ubuntu@ip-172-31-44-56:~/2026/day-24$ git log --oneline
+                    6d74fbf (HEAD -> master) docs: update the project info
+                    eb3105b doc: added new changes
+                    b76d68c (feature-signup) doc: validated signup
+                    77427fc doc:update signup
+                    5774157 (feature-login) chore:added nginx run file
+                    d90541b feat: added nginx script
+                    32d53d2 fet: added first page
+          -git switch feature-signup
+          -git log --oneline
+           ## OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git log --oneline
+                      b76d68c (HEAD -> feature-signup) doc: validated signup
+                      77427fc doc:update signup
+                      5774157 (feature-login) chore:added nginx run file
+                      d90541b feat: added nginx script
+                      32d53d2 fet: added first page
+          -git rebase feature-dashboard
+          -git log --oneline
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git log --oneline
+                    10c644c (HEAD -> feature-signup, feature-dashboard) feat: added dashboard API
+                    893a10f feat: added dashboard UI
+                    2b34c17 Merge branch 'feature-signup'
+                    725ea2d doc: added new changes
+                    b76d68c doc: validated signup
+                    77427fc doc:update signup
+                    5774157 (feature-login) chore:added nginx run file
+                    d90541b feat: added nginx script
+                    32d53d2 fet: added first page
         3- What does rebase actually do to your commits?
            -It moves your commits on top of the latest changes from another branch to keep history clean.
         4- How is the history different from a merge?

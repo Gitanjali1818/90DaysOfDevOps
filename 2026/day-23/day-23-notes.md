@@ -21,16 +21,14 @@
 ## Task 2: Branching Commands — Hands-On:
    
      1- List all branches in your repo
-        git branch - ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git branch
-                     * master
+        git branch -
 
      2- Create a new branch called feature-1
-        git branch feature-1
-
+        git  git checkout -b feature-1
+        
      3- Switch to feature-1
         git switch feature-1
-        ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git switch feature-1
-                  Switched to branch 'feature-1'
+        ##OUTPUT: Switched to a new branch 'feature-1'
 
       4- Create a new branch and switch to it in a single command — call it feature-2
           git checkout -b feature-2
@@ -47,23 +45,21 @@
           2- Create a file: touch feature-1.txt
           3- stage & commit: git add feature-1
                              git commit -m "added feature-1.txt"
-          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git commit -m "added feature-1.txt"
-                    [feature-1 ccf4950] added feature-1.txt
-                    1 file changed, 0 insertions(+), 0 deletions(-)
-                    create mode 100644 feature-1.txt                   
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-23$ git commit -m "added freature-1.txt"
+                    [feature-1 (root-commit) a27ac34] added freature-1.txt
+                    1 file changed, 2 insertions(+)
+                    create mode 100644 feature-1.txt                
 
        7- Switch back to master — verify that the commit from feature-1 is not there
            1- swicth to master: git switch master
            2- check log: git log --oneline
-           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git log --oneline
-                     d793075 (HEAD -> master, feature-2) added git commands file
-                     6178da9 added more commands
-                     0fead7c added git commands
-
+           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-23$ git log --oneline
+                     a27ac34 (HEAD -> master, feature-1) added freature-1.txt
+                     
        8- Delete a branch you no longer need
            git branch -d feature-2
-           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git branch -d feature-2
-                     Deleted branch feature-2 (was d793075). 
+           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-23$ git branch -d feature-2
+                     Deleted branch feature-2 (was a27ac34).
 
 
 ## Task 3: Push to GitHub
@@ -94,7 +90,7 @@
 
        1- After editing a file directly on GitHub:
           git pull origin main
-          cat index.tml
+          cat index.html
 
        2- What is the difference between git fetch and git pull?
           Git fetch: Downloads the changes from remote repository

@@ -98,10 +98,12 @@
            - git add .
            - git commit -m "add branch commands"
            ## View the full history in a compact format
-             - git log --oneline
-
-             OUTPUT:
-
+            - git log --oneline
+            ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-22/task-2/devops-git-practice$ git log --oneline
+                      d793075 (HEAD -> master) added git commands file
+                      6178da9 added more commands
+                      0fead7c added git commands
+             
 ## Task 6: Understand the Git Workflow:
         1- What is the difference between git add and git commit?
            -git add moves the file into staging area.

@@ -10,7 +10,7 @@
         -git switch -c feature-login
       2- add a couple of commints in feature-login
          -vim login.txt
-           (This file for devops practice.created nginx script)
+           (This file for practice.created nginx script)
          -git add login.txt
          -git commit -m "feat: nginx script is added"
          -vim login.txt
@@ -18,16 +18,31 @@
           -git add login.txt
           -git commit -m "chore: added nginx run"
           -git log --oneline
+          ## OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git log --oneline
+                     5774157 (HEAD -> feature-login) chore:added nginx run file
+                     d90541b feat: added nginx script
+                     32d53d2 (master) fet: added first page
 
        3- Switch back to main and merge feature-login into main
-          -git switch main
+          -git switch master
           -git merge feature-login
-
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git merge feature-login
+                    Updating 32d53d2..5774157
+                    Fast-forward
+                    login.txt | 2 ++
+                    1 file changed, 2 insertions(+)
+                    create mode 100644 login.txt
        4- Observe the merge — did Git do a fast-forward merge or a merge commit?
-          OUTPUT:
+           -yes
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git merge feature-login
+                    Updating 32d53d2..5774157
+                    Fast-forward
+                    login.txt | 2 ++
+                    1 file changed, 2 insertions(+)
+                    create mode 100644 login.txt
 
        5- Now create another branch feature-signup, add commits to it — but also add a commit to main before merging
-          -git checkout -c feature-signup
+          -git checkout -b feature-signup
           -vim signup.txt
            (this is a signup page)
           -git add .

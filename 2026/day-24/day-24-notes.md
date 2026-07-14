@@ -163,19 +163,35 @@
          - git commit -m "style: formatting"
          - git commit -m "feat: profile image"
          - git commit -m "fix: validation"
-      2- Merge it into main using --squash — what happens?
-         - git checkout main
+      2- Merge it into master using --squash — what happens?
+         - git switch master
          - git merge --squash feature-profile
          - git commit -m "feat: add profile feature"
-         ##OUTPUT: after squash
-       3- Check git log — how many commits were added to main?
+         ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git log --oneline
+                   6d74fbf (HEAD -> master) docs: update the project info
+                   eb3105b doc: added new changes
+                   b76d68c doc: validated signup
+                   77427fc doc:update signup
+                   5774157 (feature-login) chore:added nginx run file
+                   d90541b feat: added nginx script
+                   32d53d2 fet: added first page
+                   
+       3- Check git log — how many commits were added to master?
          - git log --oneline
          ##OUTPUT: only one commit is added
        4- Now create another branch feature-settings, add a few commits
           - git checkout -b feature-setting
-       5- Merge it into main without --squash (regular merge) — compare the history
-          - git checkout main
+       5- Merge it into master without --squash (regular merge) — compare the history
+          - git checkout master
           - git merge feature-setting
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git log --oneline
+                    5b41ad0 (HEAD -> master, feature_setting) style: backround
+                    35f80a4 fix: dashborad
+                    578bf10 feat: setting
+                    6d74fbf docs: update the project info
+                    eb3105b doc: added new changes
+                    b76d68c doc: validated signup
+                    77427fc doc:update signup
        6- What does squash merging do?
           - Combines multiple commits into one before merging.
        7- When would you use squash merge vs regular merge?
@@ -190,20 +206,20 @@
           - git checkout feature-dashborad
           (Sometimes Git blocks switching due to uncommitted changes.)
        3- Use git stash to save your work-in-progress   
-          - git squash (Save work)
+          - git stash (Save work)
        4- Switch to another branch, do some work, switch back
           - git checkout feature-login(switch branch)
-          - git checkout main (return into main)
+          - git checkout master (return into master)
        5- Apply your stashed changes using git stash pop
           - git stash pop
        6- Try stashing multiple times and list all stashes
-          - git stash push -m "work-1"
-          - git stash push -m "work-2"  
+          - git stash push -m "work-1"  
           - git stash list
-          OUTPUT:
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git stash list
+                    stash@{0}: On feature-dashboard: work-1
+                    stash@{1}: WIP on feature-dashboard: 1c4e9d6 style: switch add
        7- Try applying a specific stash from the list
           - git stash apply @{1}
-          OUTPUT:
        8- What is the difference between git stash pop and git stash apply?
           - git stash apply: applies stash and keeps it
           - git stash pop: applies stash and removed it
@@ -218,10 +234,12 @@
           - git commit -m "fix: payment bug"
           - git commit -m "fix: issue 3"
           - git log --oneline
-       2- Switch to main
-          - git switch main
+       2- Switch to master
+          - git switch master
        3- Cherry-pick only the second commit from feature-hotfix onto main
           - git cherry-pick second commit id
+          ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-24$ git log --oneline --graph --all
+                    * 98035b7 (master) fix: dashborad
        4- Verify with git log that only that one commit was applied
           - git log --oneline --graph --all
        5- What does cherry-pick do?
@@ -231,7 +249,7 @@
           - taking only one useful commit from another branch
           - avoiding merging an entire branch
         7- What can go wrong with cherry-picking?
-           - merged conflicts
+           - merged conflicts- I faced this issue after using cherry-pick
            - duplicate commits
            - confusing history if overused
 

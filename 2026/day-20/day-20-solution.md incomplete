@@ -1,44 +1,82 @@
 ## Day 20 – Bash Scripting Challenge: Log Analyzer and Report Generator:
 
+      ##STEP-1
+      ## 2026/
+           └── day-20/
+           ├── log_analyzer.sh
+           ├── sample_log.log
+           ├── sample_logs_generator.sh
+           └── day-20-solution.md
+        1- cd ~/2026/day-20
+        2- vim sample_logs_generator.sh
+        3- chmod +x sample_logs_generator.sh
+        4- ./sample_logs_generator.sh
+        5- ls
+        6- OUTPUT: sample_log.log
+        7- cat sample_log.log
+        8- head sample_log.log- Display only the first 10 lines
+        9- tail sample_log.log- Display the last 10 lines
+
+       ##STEP-2- Create the Script File
+        1- touch log_analyzer.sh
+        2- chmod +x log_analyzer.sh
+        3- vim log_analyzer.sh 
+        4- #!/bin/bash- At the top of the file, add....
+
 ## Task 1: Input and Validation:
         1- Accept the path to a log file as a command-line argument.
-           - LOGFILE=$1
+           - $1- $1 represents the first command-line argument.
            - ./log_analyzer.sh sample_log.log
            - sample_log.log (it is the input)
            - first argument: $1 = sample_log.log
            - #!/bin/bash
              LOG_FILE=$1
-         2- Exit with a clear error message if no argument is provided.
-           - if [ $# -eq 0]; then
-             echo "Error: no log file provided."
-             echo "usage: ./log_analyzer.sh <log_file>"
-             exit 1
-             fi
-            -Explanation: 
-             1- $# gives the nu. of command line arguments
-             2- If no argument is orivided, orint an error message and exit the script.
-         3- Exit withCount the total number of lines containing the keyword ERROR or Failed a clear error message if the file doesn't exist
-            -if [ ! -f "$LOGFILE"]; then
-             echo "Error: FILE '$LOGFILE' does not exist."
-             exit 1
-             fi
-            - Explanation: -f checks whether the file exists and is a regular file.
+           ## Check if an Argument Was Provided
+           - syntax:
+                    if [ $# -eq 0 ]
+                       then
+                      echo "Please provide a log file."
+                      exit 1
+                   fi
+             ($#- No. of arguments)
+            - ./log_analyzer.sh
+            - OUTPUT: $# = 0
+                      exit 1
+            - Stops the script because an error occurred.
+
+            ## Check if the File Exists:
+              -Syntax: if [ ! -f "$LOGFILE" ]
+                          then
+                         echo "File does not exist."
+                         exit 1
+                      fi
+                    (!- not)  
+              - ./log_analyzer.sh sample_log.log
+             - OUTPUT: 
+
 
 
 ## Task 2: Error Count:
           1- Print the total error count to the console
-             -grep -c "ERROR" "$LOGFILE"
+             -grep -E "ERROR|Failed"
              -grep -c counts the no. of lines containing the word ERROR.
           2- Count the total number of lines containing the keyword ERROR or Failed
+             - ERROR_COUNT=$(grep -Ec "ERROR|Failed" "$LOGFILE")
 
 ## Task 3: Critical Events:
           1- Search for lines containing the keyword CRITICAL
-             -grep -c "CRITICAL" "$LOGFILE"
-          2- Print those lines along with their line number
+             -grep -n 
+           (##SYNTAX:
+                    echo "Critical Events"
+                    grep -n "CRITICAL" "$LOGFILE")
+          
+           2- Print those lines along with their line number
+             - grep -n "CRITICAL" sample_log.log
 
 ## Task 4: Top Error Messages:
          1- Extract all lines containing ERROR
-            - grep -c "ERROR" "$LOGFILE"
+            - grep ERROR sample_log.log
+
          2- Identify the top 5 most common error messages
            - grep "ERROR" "$LOGFILE" |awk '{$1=$2=$3=; print}' | sort | uniq -c | sort -rn | head -5
            -Explantion:
@@ -57,7 +95,13 @@
 ## Task 5: Summary Report:
           1- Generate a summary report to a text file named log_report_<date>.txt (e.g., 
              log_report_2026-02-11.txt). The report should include:
-            - ./log_analyzer.sh sample_log.log
+             1- Date of analysis- date +%Y-%m-%d
+             2- Log file name- echo "Errors : $ERROR_COUNT" >> $REPORT
+             3- Total lines processed- TOTAL_LINES=$(wc -l < "$LOGFILE")
+             4- Total error count-
+             5- Top 5 error messages with their occurrence count
+             6- List of critical events with line numbers
+ 
             -OUTPUT:
 
 ## Task 6 (Optional): Archive Processed Logs:
@@ -67,6 +111,9 @@
             -mv "$LOG_FILE" archive/
          3- Print a confirmation message
            -echo "Log file moved to archive successfully."
+        ## Final Run:
+           -./log_analyzer.sh sample_log.log
+           - cat log_report_2026-07-14.txt
         
           
 ## 1. log_analyzer.sh:

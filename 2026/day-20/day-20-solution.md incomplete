@@ -10,17 +10,42 @@
         1- cd ~/2026/day-20
         2- vim sample_logs_generator.sh
         3- chmod +x sample_logs_generator.sh
-        4- ./sample_logs_generator.sh
+        4- ./sample_logs_generator.sh sample_log.log 200
         5- ls
-        6- OUTPUT: sample_log.log
+        6- OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ ls
+                   sample_log.log  sample_logs_generator.sh
         7- cat sample_log.log
         8- head sample_log.log- Display only the first 10 lines
+           ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ head sample_log.log
+                     2026-07-15 10:14:16 [WARNING]  - 5257
+                     2026-07-15 10:14:16 [DEBUG]  - 16434
+                     2026-07-15 10:14:16 [ERROR] Out of memory - 13023
+                     2026-07-15 10:14:16 [INFO]  - 25496
+                     2026-07-15 10:14:16 [WARNING]  - 9675
+                     2026-07-15 10:14:16 [WARNING]  - 16183
+                     2026-07-15 10:14:16 [ERROR] Failed to connect - 5186
+                     2026-07-15 10:14:16 [ERROR] Disk full - 8299
+                     2026-07-15 10:14:16 [WARNING]  - 28638
+                     2026-07-15 10:14:16 [DEBUG]  - 30509
+
         9- tail sample_log.log- Display the last 10 lines
+            ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ tail sample_log.log
+                      2026-07-15 10:14:16 [DEBUG]  - 21069
+                      2026-07-15 10:14:16 [CRITICAL]  - 1465
+                      2026-07-15 10:14:16 [DEBUG]  - 8780
+                      2026-07-15 10:14:16 [CRITICAL]  - 6268
+                      2026-07-15 10:14:16 [ERROR] Failed to connect - 32297
+                      2026-07-15 10:14:16 [INFO]  - 9880
+                      2026-07-15 10:14:16 [ERROR] Failed to connect - 26313
+                      2026-07-15 10:14:16 [ERROR] Failed to connect - 21559
+                      2026-07-15 10:14:16 [WARNING]  - 19874
+                      2026-07-15 10:14:16 [WARNING]  - 29452
 
        ##STEP-2- Create the Script File
         1- touch log_analyzer.sh
         2- chmod +x log_analyzer.sh
         3- vim log_analyzer.sh 
+
         4- #!/bin/bash- At the top of the file, add....
 
 ## Task 1: Input and Validation:
@@ -40,45 +65,61 @@
                    fi
              ($#- No. of arguments)
             - ./log_analyzer.sh
-            - OUTPUT: $# = 0
-                      exit 1
+            - OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ ./log_analyzer.sh
+                      Please provide a log file.
             - Stops the script because an error occurred.
 
             ## Check if the File Exists:
-              -Syntax: if [ ! -f "$LOGFILE" ]
+              -Syntax: LOG_FILE=$1
+                     if [ ! -f "$LOGFILE" ]
                           then
                          echo "File does not exist."
                          exit 1
                       fi
                     (!- not)  
               - ./log_analyzer.sh sample_log.log
-             - OUTPUT: 
+             - OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ ./log_analyzer.sh sample_log.log
+                       (No output because validation pass and script reaches the end)
 
 
 
 ## Task 2: Error Count:
           1- Print the total error count to the console
-             -grep -E "ERROR|Failed"
-             -grep -c counts the no. of lines containing the word ERROR.
+             -grep -E "ERROR|Failed" sample_log.log
+             
           2- Count the total number of lines containing the keyword ERROR or Failed
-             - ERROR_COUNT=$(grep -Ec "ERROR|Failed" "$LOGFILE")
+             -grep -c counts the no. of lines containing the word ERROR.     
+             -grep -E "ERROR|Failed" sample_log.log
+             ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ echo "Total Errors: $ERROR_COUNT"
+                       Total Errors: 42
 
 ## Task 3: Critical Events:
           1- Search for lines containing the keyword CRITICAL
-             -grep -n 
-           (##SYNTAX:
-                    echo "Critical Events"
-                    grep -n "CRITICAL" "$LOGFILE")
+             - grep -nc "CRITICAL" sample_log.log
+             ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ grep -nc "CRITICAL" sample_log.log
+                       38
+                        OR
+           2- vim log_analyzer.sh
+              ##SYNTAX:
+                    echo "========Critical Events========"
+                    grep -nc "CRITICAL" "$LOGFILE"
+               - ./log_analyzer.sh sample_log.log
+               ##OUTPUT: ========CRITICAL EVENTS========
+                         38    
           
            2- Print those lines along with their line number
-             - grep -n "CRITICAL" sample_log.log
+             - grep -nc "CRITICAL" sample_log.log
+             ##OUTPUT: 38
 
 ## Task 4: Top Error Messages:
          1- Extract all lines containing ERROR
-            - grep ERROR sample_log.log
+            - grep "ERROR" sample_log.log
+            - grep -nc "ERROR" sample_log.log
+            ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ grep -nc "ERROR" sample_log.log
+                      42
 
          2- Identify the top 5 most common error messages
-           - grep "ERROR" "$LOGFILE" |awk '{$1=$2=$3=; print}' | sort | uniq -c | sort -rn | head -5
+           - grep "ERROR" "sample_log.log" |awk '{$1=$2=$3="";print}' | sort | uniq -c | sort -rn | head -5
            -Explantion:
              - grep- select only ERROR lines
              - awk- Removes the data time and log level
@@ -86,10 +127,58 @@
              - uniq -c- counts how many times each message appears
              - sort -rn- sorts by count
              - head -5- shows the only top 5
-            -OUTPUT:
+            -OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ grep "ERROR" "sample_log.log" |awk '{$1=$2=$3="";print}' | sort | uniq -c | sort -rn | head -5
+                     1    Segmentation fault - 30726
+                     1    Segmentation fault - 26836
+                     1    Segmentation fault - 24844
+                     1    Segmentation fault - 13983
+                     1    Segmentation fault - 1045
+
          3- Display them with their occurrence count, sorted in descending order
-            - grep "ERROR" "$LOGFILE" | awk '{$1=$2=$3="";print}' | sort |uniq -c | sort -rn
-            -OUTPUT: 
+            - grep "ERROR" "sample_log.log" | awk '{$1=$2=$3="";print}' | sort |uniq -c | sort -rn
+            -OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ grep "ERROR" "sample_log.log" | awk '{$1=$2=$3="";print}' | sort |uniq -c | sort -rn
+                     1    Segmentation fault - 30726
+                     1    Segmentation fault - 26836
+                     1    Segmentation fault - 24844
+                     1    Segmentation fault - 13983
+                     1    Segmentation fault - 1045
+                     1    Out of memory - 7370
+                     1    Out of memory - 31532
+                     1    Out of memory - 31157
+                     1    Out of memory - 30486
+                     1    Out of memory - 20347
+                     1    Out of memory - 16605
+                     1    Out of memory - 13023
+                     1    Invalid input - 7745
+                     1    Invalid input - 536
+                     1    Invalid input - 5325
+                     1    Invalid input - 28103
+                     1    Invalid input - 22669
+                     1    Invalid input - 21620
+                     1    Invalid input - 1780
+                     1    Invalid input - 15911
+                     1    Failed to connect - 7779
+                     1    Failed to connect - 5186
+                     1    Failed to connect - 32297
+                     1    Failed to connect - 28821
+                     1    Failed to connect - 26313
+                     1    Failed to connect - 21559
+                     1    Failed to connect - 20382
+                     1    Failed to connect - 20125
+                     1    Failed to connect - 17632
+                     1    Failed to connect - 16127
+                     1    Failed to connect - 15190
+                     1    Failed to connect - 1449
+                     1    Failed to connect - 14254
+                     1    Failed to connect - 13353
+                     1    Failed to connect - 1122
+                     1    Disk full - 8299
+                     1    Disk full - 6251
+                     1    Disk full - 6145
+                     1    Disk full - 5586
+                     1    Disk full - 30468
+                     1    Disk full - 21898
+                     1    Disk full - 15965
 
 
 ## Task 5: Summary Report:

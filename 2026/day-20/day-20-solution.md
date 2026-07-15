@@ -190,7 +190,7 @@
                 ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ cat log_report_2026-07-15.txt
                           Date of Analysis : 2026-07-15
                           Log File Name: sample_log.log
-             3- Total lines processed- Techo "Total Lines Processed: $(wc -l < "$LOGFILE")" >> "$REPORT"
+             3- Total lines processed- echo "Total Lines Processed: $(wc -l < "$LOGFILE")" >> "$REPORT"
                 ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ cat log_report_2026-07-15.txt
                           Date of Analysis : 2026-07-15
                           Log File Name: sample_log.log

@@ -1,12 +1,12 @@
 ## Day 20 – Bash Scripting Challenge: Log Analyzer and Report Generator:
 
-##STEP-1
-      ## 2026/
-           └── day-20/
-           ├── log_analyzer.sh
-           ├── sample_log.log
-           ├── sample_logs_generator.sh
-           └── day-20-solution.md
+## STEP-1
+           ## 2026/
+               └── day-20/
+               ├── log_analyzer.sh
+               ├── sample_log.log
+               ├── sample_logs_generator.sh
+               └── day-20-solution.md
         1- cd ~/2026/day-20
         2- vim sample_logs_generator.sh
         3- chmod +x sample_logs_generator.sh

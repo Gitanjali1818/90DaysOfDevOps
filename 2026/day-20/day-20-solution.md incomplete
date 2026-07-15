@@ -186,13 +186,36 @@
              log_report_2026-02-11.txt). The report should include:
              1- Date of analysis- echo "Date of Analysis : $(date +%Y-%m-%d)" > "$REPORT"
                 ##OUTPUT: -rw-rw-r-- 1 ubuntu ubuntu   30 Jul 15 12:07 log_report_2026-07-15.txt  
-             2- Log file name- echo "Errors : $ERROR_COUNT" >> $REPORT
-             3- Total lines processed- TOTAL_LINES=$(wc -l < "$LOGFILE")
-             4- Total error count-
-             5- Top 5 error messages with their occurrence count
-             6- List of critical events with line numbers
+             2- Log file name- echo "Log File Name: sample_log.log" >> "$REPORT"
+                ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ cat log_report_2026-07-15.txt
+                          Date of Analysis : 2026-07-15
+                          Log File Name: sample_log.log
+             3- Total lines processed- Techo "Total Lines Processed: $(wc -l < "$LOGFILE")" >> "$REPORT"
+                ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ cat log_report_2026-07-15.txt
+                          Date of Analysis : 2026-07-15
+                          Log File Name: sample_log.log
+                          Total Lines Processed: 200
+             4- Total error count- echo "Total Error Count: $(grep -Ec "ERROR|Failed" "$LOGFILE")" >> "$REPORT"
+                ##OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ cat log_report_2026-07-15.txt
+                          Date of Analysis : 2026-07-15
+                          Log File Name: sample_log.log
+                          Total Lines Processed: 200
+                          Total Error Count: 42
+             5- Top 5 error messages with their occurrence count-  echo "" >> "$REPORT"
+                                                                   echo "Top 5 Error Messages:" >> "$REPORT"
+                                                                   grep "ERROR" "$LOGFILE" | awk '{$1=$2=$3=""; print}' | sort | uniq -c | sort -rn | head -5 >> "$REPORT"
+                ##OUTPUT: Top 5 Error Messages:
+                          1    Segmentation fault - 30726
+                          1    Segmentation fault - 26836
+                          1    Segmentation fault - 24844
+                          1    Segmentation fault - 13983
+                          1    Segmentation fault - 1045
+
+             6- List of critical events with line numbers-  echo "" >> "$REPORT"
+                                                            echo "Critical Events:" >> "$REPORT"
+                                                            grep -n "CRITICAL" "$LOGFILE" >> "$REPORT"
  
-            -OUTPUT:
+                 ##OUTPUT: 38 (There is a 38 lines so i only put no.)
 
 ## Task 6 (Optional): Archive Processed Logs:
          1- Create an archive/ directory if it doesn't exist

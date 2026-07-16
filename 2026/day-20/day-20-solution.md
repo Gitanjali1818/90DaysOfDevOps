@@ -127,7 +127,8 @@
              - uniq -c- counts how many times each message appears
              - sort -rn- sorts by count
              - head -5- shows the only top 5
-            -OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ grep "ERROR" "sample_log.log" |awk '{$1=$2=$3="";print}' | sort | uniq -c | sort -rn | head -5
+            -OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ grep "ERROR" "sample_log.log" |awk '{$1=$2=$3="";print}' 
+                                                           | sort | uniq -c | sort -rn | head -5
                      1    Segmentation fault - 30726
                      1    Segmentation fault - 26836
                      1    Segmentation fault - 24844
@@ -136,7 +137,8 @@
 
          3- Display them with their occurrence count, sorted in descending order
             - grep "ERROR" "sample_log.log" | awk '{$1=$2=$3="";print}' | sort |uniq -c | sort -rn
-            -OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ grep "ERROR" "sample_log.log" | awk '{$1=$2=$3="";print}' | sort |uniq -c | sort -rn
+            -OUTPUT: ubuntu@ip-172-31-44-56:~/2026/day-20$ grep "ERROR" "sample_log.log" | awk '{$1=$2=$3="";print}' 
+                                                           | sort |uniq -c | sort -rn
                      1    Segmentation fault - 30726
                      1    Segmentation fault - 26836
                      1    Segmentation fault - 24844

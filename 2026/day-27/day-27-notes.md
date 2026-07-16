@@ -76,7 +76,7 @@
           3- Python Scripts — a dedicated repo for your Python projects
              1- Move/copy your scripts from Days 7–15 here
                 -Repo name: python script
-                -mkdit python-script
+                -mkdir python-script
                 -cp ../90-days-of-devops/2026/day-07/*.py .
                 -cp ../90-days-of-devops/2026/day-08/*.py .
                 -cp ../90-days-of-devops/2026/day-09/*.py .

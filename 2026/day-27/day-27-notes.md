@@ -71,7 +71,15 @@
               2- Add a README listing what each script does
                 # shell scripts
                   collection of shell scripting practice
-                  ##scripts:
+                  ##scripts-OUTPUT: ubuntu@ip-172-31-44-56:~/2026/shell-scripts$ ls
+                                    README.md             file_check.sh            log_analyzer.sh        safe_script.sh
+                                    args_demo.sh          for_loop.sh              log_rotate.sh          sample_logs_generator.sh
+                                    backup.sh             functions.sh             loop_control.sh        server_check.sh
+                                    check_number.sh       greet.sh                 looping_over_files.sh  strict_demo.sh
+                                    count.sh              if_else_server_check.sh  maintance.sh           system_info.sh
+                                    countdown.sh          install_packages.sh      passing_arguments.sh   untill_loop.sh
+                                    defining_function.sh  local_demo.sh            read.sh                variable.sh
+                                    disk_check.sh         local_variable.sh        return_value.sh        while_loop.sh
                     -
           3- Python Scripts — a dedicated repo for your Python projects
              1- Move/copy your scripts from Days 7–15 here

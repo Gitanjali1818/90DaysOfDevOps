@@ -34,7 +34,7 @@
              4 - check nginx : sudo systemctl status nginx
 
      ## PART 6 : Test website :
-             1- open browser : http:// ip address
+             1- open browser : (http://18.237.4.59/)
              2- see : Welcome to nginx!
      ## screenshot needed :
 
@@ -47,7 +47,9 @@
              2- verify log file : cat ~/nginx-log.txt
     ## Screenshot needed :
 
-    ## PART 9 : Download log file to local machine : scp -i my-key.pem ubuntu@18.236.106.166:~/nginx-logs.txt .
+    ## PART 9 : Download log file to local machine : scp -i .\geet-key.pem ubuntu@18.237.4.59:/home/ubuntu/nginx-log.txt .
+               ##OUTPUT: -a----        21-07-2026     00:19           8497 nginx-log.txt
+                
 
 ## Commands Used :
                 ssh -i geet-key.pem ubuntu@18.236.106.166

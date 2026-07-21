@@ -8,36 +8,44 @@
              sudo passwd professor : create password
 
       ## Verify users :
-          1- cat /etc/passwd | grep tokyo : 
-          2- ls /home/ :
+          1- cat /etc/passwd | grep tokyo: ubuntu@ip-172-31-44-56:~$ cat /etc/passwd | grep tokyo
+                                           tokyo:x:1005:1005::/home/tokyo:/bin/sh
+          2- ls /home/: ubuntu@ip-172-31-44-56:~$ ls /home/
+                        berlin  professor  tokyo  ubuntu  username
 
 ## Task 2: Create Groups :
-          1- sudo groupadd developers :
-          2- sudo groupadd admins :
+          1- sudo groupadd developers 
+          2- sudo groupadd admins 
 
       ## Verify :
-          1- cat /etc/group | grep developers :
+          1- cat /etc/group | grep developers: ubuntu@ip-172-31-44-56:~$ cat /etc/group | grep developers
+                                               developers:x:1008:
 
 ## Task 3: Assign to Groups :
       ## Assign users :
           1- sudo usermod -aG developers tokyo
           2- sudo usermod -aG developers berlin
-          3- sudo usermod -aG admins berlin
-          4- sudo usermod -aG admins professor
+          3- sudo usermod -aG admin berlin
+          4- sudo usermod -aG admin professor
 
       ## Verify group membership :
-         1- groups tokyo
-         2- groups berlin
-         3- groups professor 
+         1- groups tokyo: ubuntu@ip-172-31-44-56:~$ groups tokyo
+                          tokyo : tokyo developers
+         2- groups berlin: ubuntu@ip-172-31-44-56:~$ groups berlin
+                           berlin : berlin admin developers
+         3- groups professor: ubuntu@ip-172-31-44-56:~$ groups professor
+                              professor : professor admin
 
 ## Task 4: Shared Directory :
-      ## Create directory :
-        1- sudo mkdir -p /opt/dev-project
+      ## Create directory:
+        1- sudo mkdir -p /opt/dev-project: ubuntu@ip-172-31-44-56:/opt$ ls
+                                           containerd  dev-project
       
-      ## Change group ownership :
+      ## Change group ownership:
         1- sudo chgrp developers /opt/dev-project
 
-      ## Set permissions :
+      ## Set permissions:
+      
         1- sudo chmod 775 /otp/dev-project
 
       ## Test as users :

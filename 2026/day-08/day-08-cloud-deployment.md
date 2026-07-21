@@ -13,7 +13,7 @@
 
        ## PART 2: Connect via SSH :
              1-In terminal: chmod 400 geet-key.pem
-             2- Connect - ssh -i "geet-key.pem" ubuntu@ec2-44-245-217-236.us-west-2.compute.amazonaws.com
+             2- Connect - ssh -i "geet-key.pem" ubuntu@ec2-18.237.4.59. us-west-2.compute.amazonaws.com
        ## "C:\Users\Aditya Sutar\Desktop\screen shot\Screenshot 2026-04-10 124110.png"
 
 
@@ -61,7 +61,7 @@
                 systemctl status nginx
                 cat /var/log/nginx/access.log
                 cp /var/log/nginx/access.log ~/nginx-logs.txt
-                scp -i my-key.pem ubuntu@18.236.106.166:~/nginx-logs.txt .
+                scp -i my-key.pem ubuntu@18.237.4.59:~/nginx-logs.txt .
 
 ## Challenges Faced:
                1- i could not access the nginx page from browser.

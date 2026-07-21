@@ -104,9 +104,9 @@
       ## Root Cause
            - Directory owner = root
            - Directory group = root ❌        
-           - User `nairobi` belongs to group `project-team`  
+           - User 'nairobi' belongs to group 'project-team'  
       ## Conclusion :
-          Since the directory belongs to `root` group, the user `nairobi` does not have write access.
+          Since the directory belongs to 'root' group, the user 'nairobi' does not have write access.
 
      ## Solution
          - Changed group ownership:sudo chgrp project-team /opt/team-workplace    
